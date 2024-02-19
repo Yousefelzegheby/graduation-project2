@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
@@ -9,32 +11,29 @@ class TextLoginIntro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "By creating an account,you accept academix's",
-          style: Styles.text14,
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "By creating an account,you accept academix's",
+                style: Styles.text14,
+              ),
+            ],
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Terms of Services",
-              style: Styles.text14.copyWith(color: AppColors.kPrimary),
-            ),
-            const SizedBox(
-              width: 2,
-            ),
-            const Text(
-              "and",
-              style: Styles.text14,
-            ),
-            const SizedBox(
-              width: 2,
-            ),
-            Text(
-              "Privacy Policy",
-              style: Styles.text14.copyWith(color: AppColors.kPrimary),
-            ),
-          ],
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Terms of Services and Privacy Policy",
+                style: Styles.text14.copyWith(color: AppColors.kPrimary),
+              ),
+            ],
+          ),
         )
       ],
     );

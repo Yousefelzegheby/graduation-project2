@@ -22,8 +22,8 @@ class LoginViewBody extends StatefulWidget {
 
 class _LoginViewBodyState extends State<LoginViewBody> {
   GlobalKey<FormState> formkey = GlobalKey();
-  String? email;
-  String? password;
+  final TextEditingController controllerEmail = TextEditingController();
+  final TextEditingController controllerpass = TextEditingController();
   bool lood = false;
 
   @override
@@ -32,19 +32,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       create: (context) => LogInCubit(),
       child: BlocConsumer<LogInCubit, LoginCubitState>(
         listener: (context, state) {
-          if (state is LogInCubitSucssess) {
-            lood = false;
-            if (state.data == true) {
-              GoRouter.of(context).push('/customnavbar');
-            } else {
-              showSnakbar(context, 'wrong password or e-mail');
-            }
-          } else if (state is LogInCubitFailuer) {
-            lood = false;
-            showSnakbar(context, 'wrong from server');
-          } else if (state is LogInCubitLooding) {
-            lood = true;
-          }
+          // if (state is LogInCubitSucssess) {
+          //   lood = false;
+          //   if (state.data == true) {
+          //     GoRouter.of(context).push('/customnavbar');
+          //   } else {
+          //     showSnakbar(context, 'wrong password or e-mail');
+          //   }
+          // } else if (state is LogInCubitFailuer) {
+          //   lood = false;
+          //   showSnakbar(context, 'wrong from server');
+          // } else if (state is LogInCubitLooding) {
+          //   lood = true;
+          // }
         },
         builder: (context, state) {
           return ModalProgressHUD(
@@ -66,20 +66,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           height: 48,
                         ),
                         CustomTextFormFeild(
+                            controller: controllerEmail,
                             keyboardType: TextInputType.emailAddress,
                             label: const Text('E-mail(Required)'),
-                            onsaved: (data) {
-                              email = data;
-                            },
                             onchanged: (data) {
-                              email = data;
+                              BlocProvider.of<LogInCubit>(context).email = data;
                             },
                             color: AppColors.kGray,
                             hintText: 'E-mail(Required)'),
                         const SizedBox(
                           height: 16,
                         ),
-                        const CustomTextFeildPassward(),
+                        CustomTextFeildPassward(
+                          controller: controllerpass,
+                        ),
                         const SizedBox(
                           height: 16,
                         ),
@@ -97,12 +97,17 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                             theText: 'Log In',
                             onpressed: () async {
                               if (formkey.currentState!.validate()) {
-                                BlocProvider.of<LogInCubit>(context)
-                                    .postPasswardAndEmail(
-                                  email: email!,
-                                  password: BlocProvider.of<LogInCubit>(context)
-                                      .password!,
-                                );
+                                GoRouter.of(context).push('/customnavbar');
+                                controllerEmail.clear();
+                                controllerpass.clear();
+
+                                //   BlocProvider.of<LogInCubit>(context)
+                                //       .postPasswardAndEmail(
+                                //     email: BlocProvider.of<LogInCubit>(context)
+                                //         .email!,
+                                //     password: BlocProvider.of<LogInCubit>(context)
+                                //         .password!,
+                                //   );
                               }
                             },
                             backgroundColor: AppColors.kPrimary),

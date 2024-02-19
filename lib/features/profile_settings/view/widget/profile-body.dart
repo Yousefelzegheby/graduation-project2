@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation/core/utiles/colors.dart';
+import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/profile_settings/view/widget/Section1Settings.dart';
 import 'package:graduation/features/profile_settings/view/widget/Section2Settings.dart';
 import 'package:graduation/features/profile_settings/view/widget/setting_list_view.dart';
@@ -8,9 +12,9 @@ class ProfileBodey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: Column(
             children: [
               Divider(
@@ -24,9 +28,47 @@ class ProfileBodey extends StatelessWidget {
             ],
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SetingListView(),
         ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
+                GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).pop();
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset('assets/images/signout.png'),
+                          const SizedBox(width: 6),
+                          Text(
+                            'Sign Out',
+                            style: Styles.textstyle24
+                                .copyWith(color: AppColors.kPrimary),
+                          ),
+                        ],
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: AppColors.kPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

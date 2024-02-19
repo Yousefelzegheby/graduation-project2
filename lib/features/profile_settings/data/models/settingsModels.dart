@@ -17,6 +17,5 @@ class SettingsItems {
     SettingModel(text: 'About', imag: 'assets/images/ph_note-light.png'),
     SettingModel(text: 'Privacy', imag: 'assets/images/qu!.png'),
     SettingModel(text: 'Rate in App Store', imag: 'assets/images/star.png'),
-    SettingModel(text: 'ٍSign out', imag: 'assets/images/signout.png'),
   ];
 }

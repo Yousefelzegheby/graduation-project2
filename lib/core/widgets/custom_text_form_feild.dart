@@ -8,8 +8,9 @@ class CustomTextFormFeild extends StatelessWidget {
   final IconData? sufex;
   final void Function()? sufexOnpreasd;
   final Text? label;
- final void Function(String?)? onsaved;
- final TextInputType? keyboardType;
+  final void Function(String?)? onsaved;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
 
   const CustomTextFormFeild({
     Key? key,
@@ -22,12 +23,12 @@ class CustomTextFormFeild extends StatelessWidget {
     required this.color,
     required this.hintText,
     this.obscured = false,
+    this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
       obscureText: obscured!,
       keyboardType: keyboardType,
       validator: (data) {
@@ -36,13 +37,14 @@ class CustomTextFormFeild extends StatelessWidget {
         }
       },
       onSaved: onsaved,
+      controller: controller,
       onChanged: onchanged,
       decoration: InputDecoration(
           border: borderStyle(),
           enabledBorder: borderStyle(),
-          label:label ,
+          label: label,
           hintText: hintText,
-          suffixIcon: GestureDetector(onTap:sufexOnpreasd, child:Icon(sufex) ),
+          suffixIcon: GestureDetector(onTap: sufexOnpreasd, child: Icon(sufex)),
           hintStyle: TextStyle(color: color)),
     );
   }

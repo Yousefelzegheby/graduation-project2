@@ -20,6 +20,9 @@ class ForgetPasswardViewBody extends StatefulWidget {
 
 class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
   final GlobalKey<FormState> key = GlobalKey();
+  final TextEditingController codeController = TextEditingController();
+  final TextEditingController idController = TextEditingController();
+  final TextEditingController univesityController = TextEditingController();
   String? sCode;
   String? email;
   String? id;
@@ -61,6 +64,7 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                           height: 48,
                         ),
                         CustomTextFormFeild(
+                            controller: codeController,
                             onchanged: (data) {
                               sCode = data;
                             },
@@ -71,6 +75,7 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                           height: 16,
                         ),
                         CustomTextFormFeild(
+                            controller: idController,
                             onchanged: (data) {
                               id = data;
                             },
@@ -82,6 +87,7 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                           height: 16,
                         ),
                         CustomTextFormFeild(
+                            controller: univesityController,
                             onchanged: (data) {
                               email = data;
                             },
@@ -112,6 +118,9 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                                         studintCode: sCode!,
                                         id: id!,
                                         email: email!);
+                                codeController.clear();
+                                idController.clear();
+                                univesityController.clear();
                               }
                             },
                             backgroundColor: AppColors.kPrimary),

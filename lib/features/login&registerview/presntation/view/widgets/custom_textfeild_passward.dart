@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
@@ -7,9 +5,8 @@ import 'package:graduation/core/widgets/custom_text_form_feild.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 
 class CustomTextFeildPassward extends StatefulWidget {
-  const CustomTextFeildPassward({
-    super.key,
-  });
+  final TextEditingController? controller;
+  const CustomTextFeildPassward({super.key, this.controller});
 
   @override
   State<CustomTextFeildPassward> createState() =>
@@ -27,8 +24,8 @@ class _CustomTextFeildPasswardState extends State<CustomTextFeildPassward> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormFeild(
-      
-        onchanged: (data)async {
+        controller: widget.controller,
+        onchanged: (data) async {
           BlocProvider.of<LogInCubit>(context).password = data;
         },
         label: const Text('Passward(Required)'),

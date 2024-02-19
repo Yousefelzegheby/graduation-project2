@@ -70,7 +70,7 @@ class GetStarted4 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Image.asset(
-                      AssetsPath.framr1,
+                      AssetsPath.framr4,
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.height * .10,

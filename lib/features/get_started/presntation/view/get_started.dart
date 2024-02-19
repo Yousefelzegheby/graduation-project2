@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/core/widgets/custom_button.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
@@ -28,7 +25,10 @@ class GetStarted extends StatelessWidget {
                       onPressed: () {
                         GoRouter.of(context).push('/LoginViwe');
                       },
-                      child: const Text('Skip'),
+                      child: const Text(
+                        'Skip',
+                        style: TextStyle(color: AppColors.kPrimary),
+                      ),
                     ),
                   ],
                 ),

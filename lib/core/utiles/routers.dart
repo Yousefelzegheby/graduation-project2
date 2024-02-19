@@ -1,8 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
+import 'package:graduation/features/get_started/presntation/view/Get_started4.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started2.dart';
+import 'package:graduation/features/get_started/presntation/view/get_started3.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/login&registerview/presntation/view/as_doctor_or_student.dart';
 import 'package:graduation/features/login&registerview/presntation/view/forget_view.dart';
@@ -24,6 +26,14 @@ abstract class AppRoutes {
       GoRoute(
         path: '/GetStarted2',
         builder: (context, state) => const GetStarted2(),
+      ),
+      GoRoute(
+        path: '/GetStarted3',
+        builder: (context, state) => const GetStarted3(),
+      ),
+      GoRoute(
+        path: '/GetStarted4',
+        builder: (context, state) => const GetStarted4(),
       ),
       GoRoute(
         path: '/LoginViwe',

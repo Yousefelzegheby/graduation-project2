@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/HomeAppbar.dart';
-import 'package:graduation/features/home_view/presentation/view/widgets/listView_subject.dart';
+import 'package:graduation/features/home_view/presentation/view/widgets/body2.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,13 +12,13 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 24, right: 24, top: 40),
+          padding: EdgeInsets.only(left: 24, right: 24, top: 46),
           child: HpmeAppbar(),
         ),
         SizedBox(
-          height: 32,
+          height: 16,
         ),
-        ListViewSubject()
+        Body2()
       ],
     );
   }

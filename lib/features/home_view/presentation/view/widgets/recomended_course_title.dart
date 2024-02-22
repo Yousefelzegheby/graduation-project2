@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
-class DepartmentTitle extends StatelessWidget {
-  const DepartmentTitle({
-    super.key,
-  });
+class RecommendedCourseTitle extends StatelessWidget {
+  const RecommendedCourseTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +15,14 @@ class DepartmentTitle extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Department',
+                'Recommended Course',
                 style: Styles.textstyle16.copyWith(
                   color: AppColors.kPrimary,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               TextButton(
-                onPressed: () {
-                  GoRouter.of(context).push('/department');
-                },
+                onPressed: () {},
                 child: Text(
                   'View All',
                   style: Styles.text14.copyWith(
@@ -41,5 +36,6 @@ class DepartmentTitle extends StatelessWidget {
         ],
       ),
     );
+    ;
   }
 }

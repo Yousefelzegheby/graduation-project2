@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
@@ -48,22 +50,17 @@ class HpmeAppbar extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: AppColors.kPrimary,
-                size: 30,
-              ),
+            GestureDetector(
+              onTap: () {},
+              child: Image.asset('assets/images/search.png'),
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Icon(
-                Icons.notifications_active,
-                size: 30,
-                color: AppColors.kPrimary,
-              ),
+            const SizedBox(
+              width: 16,
             ),
+            GestureDetector(
+              onTap: () {},
+              child: Image.asset('assets/images/notification.png'),
+            )
           ],
         ),
       ],

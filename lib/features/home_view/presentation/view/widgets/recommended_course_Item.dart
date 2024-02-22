@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/features/home_view/presentation/view/widgets/slider.dart';
 
-class CourseItem extends StatelessWidget {
-  const CourseItem({super.key});
+class RecomendedCourseItem extends StatelessWidget {
+  const RecomendedCourseItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class CourseItem extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 7),
+                padding: const EdgeInsets.symmetric(horizontal: 6),
                 child: Text(
                   'course',
                   style: Styles.text14.copyWith(
@@ -38,20 +36,27 @@ class CourseItem extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: Text(
-                  'Overall progress 80%',
-                  style: Styles.text14.copyWith(
-                      color: AppColors.kPrimary,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12),
+                padding:
+                    const EdgeInsets.only(left: 6, right: 6, bottom: 8, top: 8),
+                child: Row(
+                  children: [
+                    Image.asset('assets/images/clock_4725362 1.png'),
+                    const SizedBox(
+                      width: 2.5,
+                    ),
+                    Text('20hours',
+                        style: Styles.text14.copyWith(
+                            color: AppColors.kPrimary,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12)),
+                  ],
                 ),
-              ),
-              const Slide()
+              )
             ],
           ),
         ),
       ],
     );
+    ;
   }
 }

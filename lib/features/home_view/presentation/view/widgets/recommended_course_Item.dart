@@ -11,18 +11,22 @@ class RecomendedCourseItem extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.of(context).size.width * .4,
-          decoration: const BoxDecoration(color: Color(0xffDBE3E8)),
+          decoration: const BoxDecoration(
+              color: Color(0xffDBE3E8),
+              borderRadius: BorderRadius.all(Radius.circular(8))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset('assets/images/image course.png'),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.only(left: 6, right: 6, top: 7),
                 child: Text(
                   'computer science,',
                   style: Styles.textstyle16.copyWith(
                     color: AppColors.kPrimary,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               Padding(

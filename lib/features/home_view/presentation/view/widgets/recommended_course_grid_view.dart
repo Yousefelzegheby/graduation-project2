@@ -21,7 +21,7 @@ class _RecommendedCourseGridViewState extends State<RecommendedCourseGridView> {
         itemCount: 8,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 5,
-          childAspectRatio: .8,
+          childAspectRatio: .76,
           mainAxisSpacing: 0,
           crossAxisCount: 2,
         ),

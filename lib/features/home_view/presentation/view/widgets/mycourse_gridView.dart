@@ -15,7 +15,7 @@ class MycourseGridView extends StatelessWidget {
         itemCount: 8,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 5,
-          childAspectRatio: .67,
+          childAspectRatio: .65,
           mainAxisSpacing: 0,
           crossAxisCount: 2,
         ),

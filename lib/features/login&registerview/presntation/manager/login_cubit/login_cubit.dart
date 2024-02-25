@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:graduation/core/utiles/api_services.dart';
-
-import 'package:meta/meta.dart';
+import 'package:graduation/features/login&registerview/data/login_model.dart';
 
 part 'login_cubit_state.dart';
 
@@ -15,8 +14,8 @@ class LogInCubit extends Cubit<LoginCubitState> {
       {required String email, required String password}) async {
     emit(LogInCubitLooding());
     try {
-      dynamic data = await ApiServices().post(
-          url: 'https://acedmix.azurewebsites.net/index.php?type=STD&fun=Login',
+      LoginModel data = await ApiServices().post(
+          url: '197.134.254.88:8000/api/auth/login',
           body: {'Email': email, 'Password': password});
       emit(LogInCubitSucssess(data: data));
     } catch (e) {

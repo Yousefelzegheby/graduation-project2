@@ -4,6 +4,9 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/notification_view/presentation/view/notification_view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/majesticons.dart';
+import 'package:iconify_flutter/icons/zondicons.dart';
 
 class CustomButonNavBar extends StatefulWidget {
   const CustomButonNavBar({super.key});
@@ -39,7 +42,11 @@ class _CustomButonNavBarState extends State<CustomButonNavBar> {
             fixedColor: Colors.white,
             items: const [
               BottomNavigationBarItem(
-                  label: "Home", icon: Icon(Icons.home_filled)),
+                  label: "Home",
+                  icon: Iconify(
+                    Majesticons.home,
+                    color: AppColors.kLightColor,
+                  )),
               BottomNavigationBarItem(
                   label: "NOtifications",
                   icon: Icon(Icons.notification_important)),

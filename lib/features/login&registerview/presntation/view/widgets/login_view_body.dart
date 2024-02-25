@@ -28,102 +28,99 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LogInCubit(),
-      child: BlocConsumer<LogInCubit, LoginCubitState>(
-        listener: (context, state) {
-          // if (state is LogInCubitSucssess) {
-          //   lood = false;
-          //   if (state.data == true) {
-          //     GoRouter.of(context).push('/customnavbar');
-          //   } else {
-          //     showSnakbar(context, 'wrong password or e-mail');
-          //   }
-          // } else if (state is LogInCubitFailuer) {
-          //   lood = false;
-          //   showSnakbar(context, 'wrong from server');
-          // } else if (state is LogInCubitLooding) {
-          //   lood = true;
-          // }
-        },
-        builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: lood,
-            child: Form(
-              key: formkey,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                ),
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(AssetsPath.logo),
-                        const SizedBox(
-                          height: 48,
-                        ),
-                        CustomTextFormFeild(
-                            controller: controllerEmail,
-                            keyboardType: TextInputType.emailAddress,
-                            label: const Text('E-mail(Required)'),
-                            onchanged: (data) {
-                              BlocProvider.of<LogInCubit>(context).email = data;
-                            },
-                            color: AppColors.kGray,
-                            hintText: 'E-mail(Required)'),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        CustomTextFeildPassward(
-                          controller: controllerpass,
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        ForgetPassward(
-                          onTap: () {
-                            GoRouter.of(context).push('/ForgetView');
+    return BlocConsumer<LogInCubit, LoginCubitState>(
+      listener: (context, state) {
+        // if (state is LogInCubitSucssess) {
+        //   lood = false;
+        //   if (state.data == true) {
+        //     GoRouter.of(context).push('/customnavbar');
+        //   } else {
+        //     showSnakbar(context, 'wrong password or e-mail');
+        //   }
+        // } else if (state is LogInCubitFailuer) {
+        //   lood = false;
+        //   showSnakbar(context, 'wrong from server');
+        // } else if (state is LogInCubitLooding) {
+        //   lood = true;
+        // }
+      },
+      builder: (context, state) {
+        return ModalProgressHUD(
+          inAsyncCall: lood,
+          child: Form(
+            key: formkey,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(AssetsPath.logo),
+                      const SizedBox(
+                        height: 48,
+                      ),
+                      CustomTextFormFeild(
+                          controller: controllerEmail,
+                          keyboardType: TextInputType.emailAddress,
+                          label: const Text('E-mail(Required)'),
+                          onchanged: (data) {
+                            BlocProvider.of<LogInCubit>(context).email = data;
                           },
-                        ),
-                        const SizedBox(
-                          height: 32,
-                        ),
-                        CustomButton(
-                            textColor: AppColors.kLightColor,
-                            fontsize: 16,
-                            theText: 'Log In',
-                            onpressed: () async {
-                              if (formkey.currentState!.validate()) {
-                                GoRouter.of(context).push('/customnavbar');
-                                controllerEmail.clear();
-                                controllerpass.clear();
+                          color: AppColors.kGray,
+                          hintText: 'E-mail(Required)'),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      CustomTextFeildPassward(
+                        controller: controllerpass,
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      ForgetPassward(
+                        onTap: () {
+                          GoRouter.of(context).push('/ForgetView');
+                        },
+                      ),
+                      const SizedBox(
+                        height: 32,
+                      ),
+                      CustomButton(
+                          textColor: AppColors.kLightColor,
+                          fontsize: 16,
+                          theText: 'Log In',
+                          onpressed: () async {
+                            if (formkey.currentState!.validate()) {
+                              GoRouter.of(context).push('/customnavbar');
+                              controllerEmail.clear();
+                              controllerpass.clear();
 
-                                //   BlocProvider.of<LogInCubit>(context)
-                                //       .postPasswardAndEmail(
-                                //     email: BlocProvider.of<LogInCubit>(context)
-                                //         .email!,
-                                //     password: BlocProvider.of<LogInCubit>(context)
-                                //         .password!,
-                                //   );
-                              }
-                            },
-                            backgroundColor: AppColors.kPrimary),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        const TextLoginIntro()
-                      ],
-                    ),
+                              //   BlocProvider.of<LogInCubit>(context)
+                              //       .postPasswardAndEmail(
+                              //     email: BlocProvider.of<LogInCubit>(context)
+                              //         .email!,
+                              //     password: BlocProvider.of<LogInCubit>(context)
+                              //         .password!,
+                              //   );
+                            }
+                          },
+                          backgroundColor: AppColors.kPrimary),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const TextLoginIntro()
+                    ],
                   ),
                 ),
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

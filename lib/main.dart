@@ -19,6 +19,7 @@ class GraduationProgect extends StatelessWidget {
         elevation: 0,
       )).copyWith(scaffoldBackgroundColor: AppColors.kLightColor),
       routerConfig: AppRoutes.router,
+      // hello =========>
     );
   }
 }

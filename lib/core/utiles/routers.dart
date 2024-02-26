@@ -8,6 +8,7 @@ import 'package:graduation/features/get_started/presntation/view/get_started.dar
 import 'package:graduation/features/get_started/presntation/view/get_started2.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started3.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
+import 'package:graduation/features/lec_table_view/presentaions/lec_table_view.dart';
 import 'package:graduation/features/login&registerview/presntation/view/as_doctor_or_student.dart';
 import 'package:graduation/features/login&registerview/presntation/view/forget_view.dart';
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
@@ -77,6 +78,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/visitSubjects',
         builder: (context, state) => const SubjectView(),
+      ),
+      GoRoute(
+        path: '/lectableview',
+        builder: (context, state) => const LecTableView(),
       ),
     ],
   );

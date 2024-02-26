@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/cource_title.dart';
-import 'package:graduation/features/home_view/presentation/view/widgets/course_item.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/department_item.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/department_title.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/listView_subject.dart';

@@ -12,6 +12,7 @@ import 'package:graduation/features/login&registerview/presntation/view/forget_v
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
+import 'package:graduation/features/subject_view/presntaion/subject_view.dart';
 
 abstract class AppRoutes {
   static final router = GoRouter(
@@ -67,6 +68,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/customnavbar',
         builder: (context, state) => const CustomButonNavBar(),
+      ),
+      GoRoute(
+        path: '/visitSubjects',
+        builder: (context, state) => const SubjectView(),
       ),
     ],
   );

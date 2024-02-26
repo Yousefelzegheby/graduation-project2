@@ -3,7 +3,6 @@ import 'package:graduation/features/home_view/presentation/view/widgets/course_i
 
 class MycourseGridView extends StatelessWidget {
   const MycourseGridView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

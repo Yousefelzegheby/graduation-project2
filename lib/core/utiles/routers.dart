@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation/core/widgets/custom-tab-bar.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
 import 'package:graduation/features/department/presentation/view/department_view.dart';
@@ -13,6 +14,7 @@ import 'package:graduation/features/login&registerview/presntation/view/login-vi
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
+import 'package:graduation/features/subject_view/presntaion/subject_view.dart';
 
 abstract class AppRoutes {
   static final router = GoRouter(
@@ -54,6 +56,10 @@ abstract class AppRoutes {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
+        path: '/CustomTabBar',
+        builder: (context, state) => const CustomTabBar(),
+      ),
+      GoRoute(
         path: '/ForgetView',
         builder: (context, state) => const ForgetPasswardView(),
       ),
@@ -72,6 +78,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/customnavbar',
         builder: (context, state) => const CustomButonNavBar(),
+      ),
+      GoRoute(
+        path: '/visitSubjects',
+        builder: (context, state) => const SubjectView(),
       ),
     ],
   );

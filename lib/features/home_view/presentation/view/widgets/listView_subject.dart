@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/ListView_item_subject.dart';
 
 class ListViewSubject extends StatelessWidget {
@@ -14,7 +15,9 @@ class ListViewSubject extends StatelessWidget {
         children: [
           ListViewItemSubject(
             text: 'Subject',
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push('/visitSubjects');
+            },
             image: 'assets/images/book_4644023.png',
           ),
           ListViewItemSubject(

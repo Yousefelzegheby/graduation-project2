@@ -11,6 +11,7 @@ import 'package:graduation/features/login&registerview/presntation/view/as_docto
 import 'package:graduation/features/login&registerview/presntation/view/forget_view.dart';
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
 
 abstract class AppRoutes {
@@ -31,6 +32,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/GetStarted3',
         builder: (context, state) => const GetStarted3(),
+      ),
+      GoRoute(
+        path: '/signup',
+        builder: (context, state) => const SignUp(),
       ),
       GoRoute(
         path: '/department',

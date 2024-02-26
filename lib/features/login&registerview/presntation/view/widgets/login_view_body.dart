@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/utiles/snakeBar.dart';
+import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/core/widgets/custom_button.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
@@ -25,15 +28,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final TextEditingController controllerEmail = TextEditingController();
   final TextEditingController controllerpass = TextEditingController();
   bool lood = false;
-
+  String? email;
+  String? password;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LogInCubit, LoginCubitState>(
       listener: (context, state) {
         // if (state is LogInCubitSucssess) {
         //   lood = false;
-        //   if (state.data == true) {
+        //   if (state.data['access_token'] != null) {
         //     GoRouter.of(context).push('/customnavbar');
+        //     controllerEmail.clear();
+        //     controllerpass.clear();
         //   } else {
         //     showSnakbar(context, 'wrong password or e-mail');
         //   }
@@ -68,7 +74,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           keyboardType: TextInputType.emailAddress,
                           label: const Text('E-mail(Required)'),
                           onchanged: (data) {
-                            BlocProvider.of<LogInCubit>(context).email = data;
+                            email = data;
                           },
                           color: AppColors.kGray,
                           hintText: 'E-mail(Required)'),
@@ -77,6 +83,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       ),
                       CustomTextFeildPassward(
                         controller: controllerpass,
+                        onchanged: (data) {
+                          password = data;
+                        },
                       ),
                       const SizedBox(
                         height: 16,
@@ -96,23 +105,37 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           onpressed: () async {
                             if (formkey.currentState!.validate()) {
                               GoRouter.of(context).push('/customnavbar');
-                              controllerEmail.clear();
-                              controllerpass.clear();
 
-                              //   BlocProvider.of<LogInCubit>(context)
-                              //       .postPasswardAndEmail(
-                              //     email: BlocProvider.of<LogInCubit>(context)
-                              //         .email!,
-                              //     password: BlocProvider.of<LogInCubit>(context)
-                              //         .password!,
-                              //   );
+                              // BlocProvider.of<LogInCubit>(context)
+                              //     .postPasswardAndEmail(
+                              //   email: email!,
+                              //   password: password!,
+                              // );
                             }
                           },
                           backgroundColor: AppColors.kPrimary),
                       const SizedBox(
                         height: 16,
                       ),
-                      const TextLoginIntro()
+                      const TextLoginIntro(),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * .09),
+                      Text(
+                        'Already a member?',
+                        style: Styles.textstyle16
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          GoRouter.of(context).push('/signup');
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: Styles.textstyle16.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.kPrimary),
+                        ),
+                      )
                     ],
                   ),
                 ),

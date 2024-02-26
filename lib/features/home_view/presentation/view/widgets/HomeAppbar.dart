@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
@@ -58,7 +59,7 @@ class HpmeAppbar extends StatelessWidget {
               width: 16,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {GoRouter.of(context).push('/customtabbar');},
               child: Image.asset('assets/images/notification.png'),
             )
           ],

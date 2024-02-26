@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation/core/widgets/custom-tab-bar.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
 import 'package:graduation/features/department/presentation/view/department_view.dart';
@@ -47,6 +48,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/HomeView',
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: '/CustomTabBar',
+        builder: (context, state) => const CustomTabBar(),
       ),
       GoRoute(
         path: '/ForgetView',

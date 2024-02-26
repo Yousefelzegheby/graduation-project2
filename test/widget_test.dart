@@ -8,6 +8,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
+=======
+// import 'package:grad/main.dart';
+>>>>>>> e69af783923b4110b68326d073f0dafd61c51ac7
 import 'package:graduation/main.dart';
 
 void main() {

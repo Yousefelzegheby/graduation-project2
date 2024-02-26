@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:graduation/core/utiles/colors.dart';
-import 'package:graduation/core/widgets/custom-tab-bar.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/notification_view/presentation/view/notification_view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/majesticons.dart';
-import 'package:iconify_flutter/icons/zondicons.dart';
 
 class CustomButonNavBar extends StatefulWidget {
   const CustomButonNavBar({super.key});
@@ -17,7 +15,7 @@ class CustomButonNavBar extends StatefulWidget {
 }
 
 class _CustomButonNavBarState extends State<CustomButonNavBar> {
-  List<Widget> pages = const [HomeView(), CustomTabBar(), Profile()];
+  List<Widget> pages = const [HomeView(), NotificationView(), Profile()];
   int current = 0;
 
   @override

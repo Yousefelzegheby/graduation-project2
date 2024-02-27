@@ -60,7 +60,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                 Row(
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .4,
+                      width: MediaQuery.of(context).size.width * .42,
                       child: const CustomTextFormFeild(
                         color: AppColors.kGray,
                         hintText: 'firist name',
@@ -68,10 +68,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .1,
+                      width: MediaQuery.of(context).size.width * .05,
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .4,
+                      width: MediaQuery.of(context).size.width * .43,
                       child: const CustomTextFormFeild(
                         color: AppColors.kGray,
                         hintText: 'last name',
@@ -109,7 +109,9 @@ class _SignUpBodyState extends State<SignUpBody> {
                     fontsize: 16,
                     theText: 'Sign Up',
                     onpressed: () {
-                      if (formkey.currentState!.validate()) {}
+                      if (formkey.currentState!.validate()) {
+                        GoRouter.of(context).push('/signup2');
+                      }
                     },
                     backgroundColor: AppColors.kPrimary),
                 const SizedBox(

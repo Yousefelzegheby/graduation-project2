@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:graduation/core/utiles/colors.dart';
 
 class CustomTextFormFeild extends StatelessWidget {
   final Color color;
-  final String hintText;
+  final String? hintText;
   final Function(String)? onchanged;
   final bool? obscured;
   final IconData? sufex;
@@ -21,7 +22,7 @@ class CustomTextFormFeild extends StatelessWidget {
     this.sufex,
     this.onchanged,
     required this.color,
-    required this.hintText,
+    @required this.hintText,
     this.obscured = false,
     this.controller,
   }) : super(key: key);

@@ -12,7 +12,10 @@ import 'package:graduation/features/login&registerview/presntation/view/forget_v
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
 import 'package:graduation/features/massege&notification/presentation/views/massege_notification.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/enterg_grade_view.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/sign_up2_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/signup_view3.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
 import 'package:graduation/features/subject_view/presntaion/subject_view.dart';
 
@@ -38,6 +41,18 @@ abstract class AppRoutes {
       GoRoute(
         path: '/signup',
         builder: (context, state) => const SignUp(),
+      ),
+      GoRoute(
+        path: '/signup2',
+        builder: (context, state) => const SignUp2View(),
+      ),
+      GoRoute(
+        path: '/signup3',
+        builder: (context, state) => const SignUpView3(),
+      ),
+      GoRoute(
+        path: '/enterGrade',
+        builder: (context, state) => const EnterGrade(),
       ),
       GoRoute(
         path: '/department',

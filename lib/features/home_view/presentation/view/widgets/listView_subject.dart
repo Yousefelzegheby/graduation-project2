@@ -22,7 +22,9 @@ class ListViewSubject extends StatelessWidget {
           ),
           ListViewItemSubject(
             text: 'Lecture tables',
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push('/lectableview');
+            },
             image: 'assets/images/calendar_747479.png',
           ),
           ListViewItemSubject(

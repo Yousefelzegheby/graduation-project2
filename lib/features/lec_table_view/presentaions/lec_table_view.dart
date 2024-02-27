@@ -3,11 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/features/subject_view/presntaion/widgets/courses_grid_view.dart';
+import 'package:graduation/features/lec_table_view/presentaions/widgets/lectures_table_items.dart';
+import 'package:graduation/features/lec_table_view/presentaions/widgets/title_page_lec.dart';
 import 'package:graduation/features/subject_view/presntaion/widgets/title_page.dart';
 
-class SubjectView extends StatelessWidget {
-  const SubjectView({super.key});
+class LecTableView extends StatelessWidget {
+  const LecTableView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +33,17 @@ class SubjectView extends StatelessWidget {
               )),
           centerTitle: true,
           toolbarHeight: 88),
-      body: ListView(
-        children: const [
+      body: const Column(
+        children: [
           Divider(),
-          TitlePage(
+          TitlePageLec(
             titlel: "My Courses",
           ),
-          CoursesGridView()
+          LecturestableItemWidget(
+            title: "First year lecture schedule",
+          )
         ],
       ),
     );
   }
 }
-

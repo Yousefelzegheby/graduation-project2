@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
-import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 
 class CustomTextFeildPassward extends StatefulWidget {
   final TextEditingController? controller;

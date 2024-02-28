@@ -102,12 +102,12 @@ class LecturestableItemWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                IconButton(
-                    padding: const EdgeInsets.all(0),
-                    onPressed: () {},
-                    icon: Image.asset(AssetsPath.itemLecTablesColumn))
               ],
             ),
+            IconButton(
+                padding: const EdgeInsets.only(bottom: 12),
+                onPressed: () {},
+                icon: Image.asset(AssetsPath.itemLecTablesColumn))
           ],
         ),
       ),

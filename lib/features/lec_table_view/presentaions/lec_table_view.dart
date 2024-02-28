@@ -37,7 +37,7 @@ class LecTableView extends StatelessWidget {
         children: [
           const Divider(),
           const TitlePageLec(
-            titlel: "My Courses",
+            titlel: "Lectures Table",
           ),
           LecturestableItemWidget(
             onTap: () {},

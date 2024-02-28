@@ -15,7 +15,7 @@ class TitlePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'My Courses',
+                '$titlel',
                 style: Styles.textstyle16.copyWith(
                   color: AppColors.kPrimary,
                   fontWeight: FontWeight.w700,

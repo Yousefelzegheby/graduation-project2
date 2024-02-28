@@ -12,4 +12,5 @@ class AssetsPath {
   static const buttonStart = 'assets/images/button.png';
   static const itemLecTables = 'assets/images/pdf.png';
   static const itemLecTablesColumn = 'assets/images/column.png';
+  static const clock = 'assets/images/clock_4725362 1.png';
 }

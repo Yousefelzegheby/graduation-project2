@@ -42,7 +42,9 @@ class EnterGrade extends StatelessWidget {
           EnterGradeBody(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            child: ButtonSignUp(),
+            child: ButtonSignUp(
+              text: 'Save',
+            ),
           )
         ],
       ),

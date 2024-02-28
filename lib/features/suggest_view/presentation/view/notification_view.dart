@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
-
-
-
-class MessageView extends StatelessWidget {
-  const MessageView({super.key});
+class SuggestView extends StatelessWidget {
+  const SuggestView({super.key});
 
   @override
   Widget build(BuildContext context) {

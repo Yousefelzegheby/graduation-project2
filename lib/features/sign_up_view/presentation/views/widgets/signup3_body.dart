@@ -26,7 +26,7 @@ class SignUp3ViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'My Personal Data:',
+                      'My University Data:',
                       style: Styles.textstyle18.copyWith(
                         color: AppColors.kPrimary,
                         fontWeight: FontWeight.w600,
@@ -59,6 +59,7 @@ class SignUp3ViewBody extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * .37,
                 ),
                 ButtonSignUp(
+                  text: 'Next',
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       GoRouter.of(context).push('/enterGrade');

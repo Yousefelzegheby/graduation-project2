@@ -5,8 +5,9 @@ import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
 
 class GradItem extends StatelessWidget {
-  const GradItem({super.key, required this.text});
-  final String text;
+  const GradItem({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +18,7 @@ class GradItem extends StatelessWidget {
           SizedBox(
             width: 200,
             child: Text(
-              text,
+              'Wep Programming',
               style: Styles.text14.copyWith(
                   fontSize: 12,
                   color: AppColors.kPrimary,

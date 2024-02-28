@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/widgets/button_signup.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/widgets/enter_grade_body.dart';
 
 class EnterGrade extends StatelessWidget {
@@ -38,7 +39,11 @@ class EnterGrade extends StatelessWidget {
           Divider(
             thickness: 1,
           ),
-          EnterGradeBody()
+          EnterGradeBody(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            child: ButtonSignUp(),
+          )
         ],
       ),
     );

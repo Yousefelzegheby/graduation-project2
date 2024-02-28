@@ -33,15 +33,28 @@ class LecTableView extends StatelessWidget {
               )),
           centerTitle: true,
           toolbarHeight: 88),
-      body: const Column(
+      body: Column(
         children: [
-          Divider(),
-          TitlePageLec(
+          const Divider(),
+          const TitlePageLec(
             titlel: "My Courses",
           ),
           LecturestableItemWidget(
+            onTap: () {},
             title: "First year lecture schedule",
-          )
+          ),
+          LecturestableItemWidget(
+            onTap: () {},
+            title: "Second year lecture schedule",
+          ),
+          LecturestableItemWidget(
+            onTap: () {},
+            title: "Third year lecture schedule",
+          ),
+          LecturestableItemWidget(
+            onTap: () {},
+            title: "Fourth year lecture schedule",
+          ),
         ],
       ),
     );

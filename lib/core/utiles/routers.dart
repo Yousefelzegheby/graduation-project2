@@ -15,7 +15,7 @@ import 'package:graduation/features/massege&notification/presentation/views/mass
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
-import 'package:graduation/features/subject_view/presntaion/subject_view.dart';
+import 'package:graduation/features/subject_view/presntaion/courses_view.dart';
 
 abstract class AppRoutes {
   static final router = GoRouter(

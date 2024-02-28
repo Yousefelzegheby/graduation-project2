@@ -8,7 +8,7 @@ class TitlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.only(top: 12, left: 24, right: 24, bottom: 12),
       child: Column(
         children: [
           Row(
@@ -21,16 +21,6 @@ class TitlePage extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'View All',
-                  style: Styles.text14.copyWith(
-                    color: AppColors.kPrimary,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              )
             ],
           ),
         ],

@@ -6,7 +6,7 @@ class CoursesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: GridView.builder(
         clipBehavior: Clip.none,
         shrinkWrap: true,
@@ -19,8 +19,6 @@ class CoursesGridView extends StatelessWidget {
           crossAxisCount: 2,
         ),
         itemBuilder: (context, index) => const CourseItem(),
-
-        
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:graduation/features/suggest_view/presentation/view/notification_
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/majesticons.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:solar_icons/solar_icons.dart';
 
 class CustomButonNavBar extends StatefulWidget {
@@ -46,12 +47,7 @@ class _CustomButonNavBarState extends State<CustomButonNavBar> {
               BottomNavigationBarItem(
                   label: "Home", icon: Icon(SolarIconsBold.home)),
               BottomNavigationBarItem(
-                label: "Suggest",
-                icon: ImageIcon(
-                  AssetImage('assets/images/suggest.png'),
-                  color: AppColors.kLightColor,
-                ),
-              ),
+                  label: "Suggest", icon: Icon(Symbols.checkbook_rounded)),
               BottomNavigationBarItem(
                   label: "Profile", icon: Icon(SolarIconsBold.user)),
             ],

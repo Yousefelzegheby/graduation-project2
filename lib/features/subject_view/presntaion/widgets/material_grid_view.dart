@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/features/home_view/presentation/view/widgets/course_item.dart';
+import 'package:graduation/features/subject_view/presntaion/widgets/material_item.dart';
 
-class CoursesGridView extends StatelessWidget {
-  const CoursesGridView({super.key});
+class MaterialGridView extends StatelessWidget {
+  const MaterialGridView({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +18,7 @@ class CoursesGridView extends StatelessWidget {
           mainAxisSpacing: 0,
           crossAxisCount: 2,
         ),
-        itemBuilder: (context, index) => const CourseItem(),
+        itemBuilder: (context, index) => const MaterialItem(),
       ),
     );
   }

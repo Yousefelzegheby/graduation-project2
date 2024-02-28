@@ -10,4 +10,7 @@ class AssetsPath {
   static const framr3 = 'assets/images/Frame 3.png';
   static const framr4 = 'assets/images/Frame 4.png';
   static const buttonStart = 'assets/images/button.png';
+  static const itemLecTables = 'assets/images/pdf.png';
+  static const itemLecTablesColumn = 'assets/images/column.png';
+  static const clock = 'assets/images/clock_4725362 1.png';
 }

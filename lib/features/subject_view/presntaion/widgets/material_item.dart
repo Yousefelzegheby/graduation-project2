@@ -1,19 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
+import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/slider.dart';
 
-class CourseItem extends StatelessWidget {
-  const CourseItem({super.key, this.onTap});
+class MaterialItem extends StatelessWidget {
+  const MaterialItem({super.key, this.onTap, this.text});
   final void Function()? onTap;
+  final String? text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        GoRouter.of(context).push("/materialview");
-      },
+      onTap: () {},
       child: Column(
         children: [
           Container(
@@ -52,16 +53,24 @@ class CourseItem extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
-                  child: Text(
-                    'Overall progress 80%',
-                    style: Styles.text14.copyWith(
-                        color: AppColors.kPrimary,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                          height: 16,
+                          width: 16,
+                          child: Image.asset(AssetsPath.clock)),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Text(
+                          "20 Houres",
+                          style: Styles.text14PrimaryColor,
+                        ),
+                      )
+                    ],
                   ),
-                ),
-                const Slide()
+                )
               ],
             ),
           ),

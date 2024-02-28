@@ -22,6 +22,11 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
+  static const text14PrimaryColor = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.kPrimary
+  );
   static const texthint11 = TextStyle(
       fontSize: 11, fontWeight: FontWeight.w400, color: Color(0xffB5C4D0));
 

@@ -39,7 +39,9 @@ class ListViewSubject extends StatelessWidget {
           ),
           ListViewItemSubject(
             text: 'Support&Help',
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push("/chatview");
+            },
             image: 'assets/images/chat_8156135.png',
           ),
         ],

@@ -59,7 +59,9 @@ class HpmeAppbar extends StatelessWidget {
               width: 16,
             ),
             GestureDetector(
-              onTap: () {GoRouter.of(context).push('/customtabbar');},
+              onTap: () {
+                GoRouter.of(context).push('/customtabbar');
+              },
               child: Image.asset('assets/images/notification.png'),
             )
           ],

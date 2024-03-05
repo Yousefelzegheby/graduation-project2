@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
+import 'package:graduation/features/chat/presentaion/chat_view.dart';
 import 'package:graduation/features/department/presentation/view/department_view.dart';
 import 'package:graduation/features/get_started/presntation/view/Get_started4.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started.dart';
@@ -107,6 +108,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/materialview',
         builder: (context, state) => const MaterialView(),
+      ),
+      GoRoute(
+        path: '/chatview',
+        builder: (context, state) => const ChatView(),
       ),
     ],
   );

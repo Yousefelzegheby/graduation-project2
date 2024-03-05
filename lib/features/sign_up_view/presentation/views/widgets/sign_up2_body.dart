@@ -83,6 +83,7 @@ class SignUp2Body extends StatelessWidget {
                   height: 24,
                 ),
                 ButtonSignUp(
+                  text: 'Next',
                   onTap: () {
                     if (formkey.currentState!.validate()) {
                       GoRouter.of(context).push('/signup3');

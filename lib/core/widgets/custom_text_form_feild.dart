@@ -22,7 +22,7 @@ class CustomTextFormFeild extends StatelessWidget {
     this.sufex,
     this.onchanged,
     required this.color,
-    @required this.hintText,
+    this.hintText,
     this.obscured = false,
     this.controller,
   }) : super(key: key);

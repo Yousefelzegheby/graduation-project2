@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
-import 'package:graduation/features/notification_view/presentation/view/notification_view.dart';
+import 'package:graduation/features/suggest_view/presentation/view/notification_view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/majesticons.dart';
+import 'package:material_symbols_icons/symbols.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 class CustomButonNavBar extends StatefulWidget {
   const CustomButonNavBar({super.key});
@@ -15,7 +17,7 @@ class CustomButonNavBar extends StatefulWidget {
 }
 
 class _CustomButonNavBarState extends State<CustomButonNavBar> {
-  List<Widget> pages = const [HomeView(), NotificationView(), Profile()];
+  List<Widget> pages = const [HomeView(), SuggestView(), Profile()];
   int current = 0;
 
   @override
@@ -39,18 +41,15 @@ class _CustomButonNavBarState extends State<CustomButonNavBar> {
               });
             },
             fixedColor: Colors.white,
+            selectedIconTheme:
+                const IconThemeData(color: AppColors.kLightColor),
             items: const [
               BottomNavigationBarItem(
-                  label: "Home",
-                  icon: Iconify(
-                    Majesticons.home,
-                    color: AppColors.kLightColor,
-                  )),
+                  label: "Home", icon: Icon(SolarIconsBold.home)),
               BottomNavigationBarItem(
-                  label: "NOtifications",
-                  icon: Icon(Icons.notification_important)),
+                  label: "Suggest", icon: Icon(Symbols.checkbook_rounded)),
               BottomNavigationBarItem(
-                  label: "Profile", icon: Icon(FontAwesomeIcons.user)),
+                  label: "Profile", icon: Icon(SolarIconsBold.user)),
             ],
           ),
         ),

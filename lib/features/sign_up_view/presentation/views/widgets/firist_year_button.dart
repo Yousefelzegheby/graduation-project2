@@ -3,8 +3,9 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
 class FiristYearButton extends StatelessWidget {
-  const FiristYearButton({super.key, this.onTap});
+  const FiristYearButton({super.key, this.onTap, required this.text});
   final void Function()? onTap;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,7 +21,7 @@ class FiristYearButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Firist',
+                text,
                 style: Styles.text14.copyWith(
                     fontWeight: FontWeight.w700, color: AppColors.kLightColor),
               ),

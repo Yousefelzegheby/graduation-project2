@@ -17,7 +17,8 @@ class Section2Settings extends StatelessWidget {
             children: [
               Text(
                 "Account Settings",
-                style: Styles.text32.copyWith(color: AppColors.kPrimary),
+                style: Styles.text32
+                    .copyWith(color: AppColors.kPrimary, fontSize: 24),
               ),
             ],
           ),

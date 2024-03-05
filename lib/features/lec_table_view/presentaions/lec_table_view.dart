@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/features/lec_table_view/presentaions/widgets/lectures_table_items.dart';
 import 'package:graduation/features/lec_table_view/presentaions/widgets/title_page_lec.dart';
-import 'package:graduation/features/subject_view/presntaion/widgets/title_page.dart';
 
 class LecTableView extends StatelessWidget {
   const LecTableView({super.key});

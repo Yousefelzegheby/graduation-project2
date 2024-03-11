@@ -13,4 +13,7 @@ class AssetsPath {
   static const itemLecTables = 'assets/images/pdf.png';
   static const itemLecTablesColumn = 'assets/images/column.png';
   static const clock = 'assets/images/clock_4725362 1.png';
+  static const avatar = 'assets/images/gojo.png';
+  static const micIcon = 'assets/images/mic.png';
+  static const sendIcon = 'assets/images/mic.png';
 }

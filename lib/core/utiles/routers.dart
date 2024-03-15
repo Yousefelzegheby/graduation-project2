@@ -20,7 +20,11 @@ import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view
 import 'package:graduation/features/sign_up_view/presentation/views/signup_view3.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
 import 'package:graduation/features/subject_view/presntaion/courses_view.dart';
-import 'package:graduation/features/subject_view/presntaion/material_view.dart';
+
+
+import '../../features/material_view/presentaion/material_course_view.dart';
+import '../../features/material_view/presentaion/material_view.dart';
+import '../../features/material_view/presentaion/materil_course_lecture_view.dart';
 
 abstract class AppRoutes {
   static final router = GoRouter(
@@ -113,6 +117,15 @@ abstract class AppRoutes {
         path: '/chatview',
         builder: (context, state) => const ChatView(),
       ),
+      GoRoute(
+        path: '/materialCourseView',
+        builder: (context, state) => const MaterialCourseView(),
+      ),
+      GoRoute(
+        path: '/materilcourselectures',
+        builder: (context, state) => const MaterilCoureseLecturesView(),
+      ),
+
     ],
   );
 }

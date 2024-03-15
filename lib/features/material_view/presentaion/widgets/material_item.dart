@@ -8,6 +8,8 @@ import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/slider.dart';
 
+
+
 class MaterialItem extends StatelessWidget {
   const MaterialItem({super.key, this.onTap, this.text});
   final void Function()? onTap;
@@ -16,7 +18,7 @@ class MaterialItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(materialCourseView);
+        GoRouter.of(context).push('/materialCourseView');
       },
       child: Column(
         children: [

@@ -1,20 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
-import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/features/massege&notification/presentation/views/message.dart';
-import 'package:graduation/features/massege&notification/presentation/views/notification.dart';
 
-class CustomTabBar extends StatefulWidget {
-  const CustomTabBar({super.key});
+import 'package:graduation/features/search/view/courses.dart';
+import 'package:graduation/features/search/view/mentors.dart';
+
+class CustomTabBarsearch extends StatefulWidget {
+  const CustomTabBarsearch({super.key});
 
   @override
-  State<CustomTabBar> createState() => _CustomTabBarState();
+  State<CustomTabBarsearch> createState() => _CustomTabBarsearchState();
 }
 
-class _CustomTabBarState extends State<CustomTabBar> {
+class _CustomTabBarsearchState extends State<CustomTabBarsearch> {
   // List<Widget> pages = const [MessageScreen(), NotificationScreen()];
   @override
   Widget build(BuildContext context) {
@@ -30,27 +29,19 @@ class _CustomTabBarState extends State<CustomTabBar> {
                   Icons.arrow_back_ios_new,
                   color: AppColors.kPrimary,
                 )),
-            title: Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * .15),
-              child: Text("Notifications",
-                  style:
-                      Styles.textstyle24.copyWith(color: AppColors.kPrimary)),
-            ),
             bottom: const TabBar(
               labelStyle: TextStyle(
                 fontFamily: 'Poppins-Bold.ttf',
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
-              tabs: [Tab(text: "Messages"), Tab(text: "Notifications")],
+              tabs: [Tab(text: "Courses"), Tab(text: "Mentors")],
               indicatorColor: AppColors.kPrimary,
               labelColor: AppColors.kPrimary,
               unselectedLabelColor: AppColors.kGray,
             ),
           ),
-          body: const TabBarView(
-              children: [MessageScreen(), NotificationScreen()])),
+          body: const TabBarView(children: [CoursesBody(), MentorsBody()])),
     );
   }
 }

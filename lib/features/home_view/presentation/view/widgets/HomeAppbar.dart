@@ -52,7 +52,9 @@ class HpmeAppbar extends StatelessWidget {
         Row(
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push('/searchview');
+              },
               child: Image.asset('assets/images/search.png'),
             ),
             const SizedBox(

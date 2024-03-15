@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
+import 'package:graduation/features/Bookmark/presentation/view/bookmark.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
 import 'package:graduation/features/chat/presentaion/chat_view.dart';
 import 'package:graduation/features/department/presentation/view/department_view.dart';
@@ -14,6 +15,8 @@ import 'package:graduation/features/login&registerview/presntation/view/forget_v
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
 import 'package:graduation/features/massege&notification/presentation/views/massege_notification.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
+import 'package:graduation/features/search/view/search.dart';
+import 'package:graduation/features/search/view/widget/customtabbar.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/enterg_grade_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up2_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
@@ -74,8 +77,8 @@ abstract class AppRoutes {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-        path: '/CustomTabBar',
-        builder: (context, state) => const CustomTabBar(),
+        path: '/CustomTabBarsearch',
+        builder: (context, state) => const CustomTabBarsearch(),
       ),
       GoRoute(
         path: '/ForgetView',
@@ -88,6 +91,14 @@ abstract class AppRoutes {
       GoRoute(
         path: '/profileSetting',
         builder: (context, state) => const Profile(),
+      ),
+      GoRoute(
+        path: '/bookmark',
+        builder: (context, state) => const BookmarkView(),
+      ),
+      GoRoute(
+        path: '/customTabbar',
+        builder: (context, state) => const CustomTabBar(),
       ),
       GoRoute(
         path: '/editprofileSetting',
@@ -113,6 +124,10 @@ abstract class AppRoutes {
         path: '/chatview',
         builder: (context, state) => const ChatView(),
       ),
+      GoRoute(
+        path: '/searchview',
+        builder: (context, state) => const Searchview(),
+      )
     ],
   );
 }

@@ -10,7 +10,10 @@ class Notificationbody extends StatelessWidget {
       body: SafeArea(
         child: ListView.separated(
           separatorBuilder: (context, index) {
-            return const Divider();
+            return const Divider(
+              indent: 30,
+              endIndent: 30,
+            );
           },
           itemCount: 50,
           itemBuilder: (context, index) {
@@ -57,6 +60,5 @@ class Notificationbody extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }

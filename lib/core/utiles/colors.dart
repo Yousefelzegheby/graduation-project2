@@ -5,4 +5,5 @@ class AppColors {
   static const  kDarkColor = Colors.black;
   static const  kPrimary = Color(0xff104168);
   static const  kGray = Color.fromARGB(255, 158, 158, 158);
+  static const  kbottom = Color(0xffE7ECF0);
 }

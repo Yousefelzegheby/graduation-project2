@@ -11,9 +11,7 @@ class CourseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        GoRouter.of(context).push("/materialview");
-      },
+      onTap: () {},
       child: Column(
         children: [
           Container(

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/features/subject_view/presntaion/widgets/courses_grid_view.dart';
-import 'package:graduation/features/subject_view/presntaion/widgets/material_grid_view.dart';
+import 'package:graduation/features/material_view/presentaion/widgets/material_grid_view.dart';
 import 'package:graduation/features/subject_view/presntaion/widgets/title_page.dart';
 
 class MaterialView extends StatelessWidget {
@@ -25,17 +24,18 @@ class MaterialView extends StatelessWidget {
             ),
           ),
           title: SizedBox(
-              height: 67,
-              child: Image.asset(
-                AssetsPath.logo,
-                fit: BoxFit.cover,
-              )),
+            height: 67,
+            child: Image.asset(
+              AssetsPath.logo,
+              fit: BoxFit.cover,
+            ),
+          ),
           centerTitle: true,
           toolbarHeight: 88),
       body: ListView(children: const [
         Divider(),
         TitlePage(titlel: "Materials"),
-        MaterialGridView()
+        MaterialGridView(),
       ]),
     );
   }

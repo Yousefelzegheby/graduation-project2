@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/features/subject_view/presntaion/widgets/material_item.dart';
+import 'package:graduation/features/material_view/presentaion/widgets/material_item.dart';
 
 class MaterialGridView extends StatelessWidget {
   const MaterialGridView({super.key});

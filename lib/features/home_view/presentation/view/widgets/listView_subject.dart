@@ -34,7 +34,9 @@ class ListViewSubject extends StatelessWidget {
           ),
           ListViewItemSubject(
             text: 'Materials',
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push("/materialview");
+            },
             image: 'assets/images/layer_7157590.png',
           ),
           ListViewItemSubject(

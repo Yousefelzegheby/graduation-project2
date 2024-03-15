@@ -52,7 +52,7 @@ class _ChatViewState extends State<ChatView> {
                 child: SizedBox(
                   height: 50,
                   child: Image.asset(
-                    "assets/images/gojo.png",
+                    AssetsPath.avatar,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -82,41 +82,78 @@ class _ChatViewState extends State<ChatView> {
   }
 
   Widget _buildMessage(Message message) {
+    final isUserMessage = message.sender == 'User1';
+
     return Container(
-      constraints: const BoxConstraints(maxWidth: 150.0),
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-      padding: const EdgeInsets.all(12.0),
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment:
+            isUserMessage ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Text(
-              message.sender.substring(0, 1),
-              style: const TextStyle(color: Colors.blue),
+          if (!isUserMessage)
+            Padding(
+              padding: const EdgeInsets.only(top: 45, right: 6),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(555),
+                child: SizedBox(
+                  height: 30,
+                  child: Image.asset(
+                    AssetsPath.avatar,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
             ),
-          ),
           const SizedBox(width: 8.0),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  message.sender,
-                  style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+            child: Container(
+              padding: const EdgeInsets.all(12.0),
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.7,
+              ),
+              decoration: BoxDecoration(
+                color: isUserMessage ? AppColors.kPrimary : Colors.blue,
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(18.0),
+                  topLeft: Radius.circular(18.0),
+                  bottomRight: Radius.circular(00.0),
+                  bottomLeft: Radius.circular(18.0),
                 ),
-                Text(
-                  message.text,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    message.sender,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4.0),
+                  Text(
+                    message.text,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
+          if (isUserMessage)
+            Padding(
+              padding: const EdgeInsets.only(top: 45, left: 6),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(555),
+                child: SizedBox(
+                  height: 30,
+                  child: Image.asset(
+                    AssetsPath.avatar,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -130,38 +167,48 @@ class _ChatViewState extends State<ChatView> {
           Container(
             margin: const EdgeInsets.only(right: 8.0),
             decoration: BoxDecoration(
-              color: Colors.grey[200], // Set your desired background color
+              color: Colors.grey[200],
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: const Icon(Icons.add),
-              onPressed: () {
-                // Add any functionality for additional features
-              },
+            child: SizedBox(
+              height: 38,
+              child: IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () {
+                  // Add any functionality for additional features
+                },
+              ),
             ),
           ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(
-                color: Colors.grey[200], // Set your desired background color
-                borderRadius: BorderRadius.circular(
-                    24.0), // Set your desired border radius
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(24.0),
               ),
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: TextField(
-                      controller: _textController,
-                      onSubmitted: _handleSubmitted,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your message...',
-                        border: InputBorder.none,
+                    child: SizedBox(
+                      height: 38,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 16, top: 16),
+                        child: TextField(
+                          controller: _textController,
+                          onSubmitted: _handleSubmitted,
+                          decoration: const InputDecoration(
+                            hintText: 'Message',
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.send),
+                    padding: const EdgeInsets.all(0),
+                    icon: Image.asset(
+                        AssetsPath.sendIcon), // Change mic to send icon
                     onPressed: () => _handleSubmitted(_textController.text),
                   ),
                 ],

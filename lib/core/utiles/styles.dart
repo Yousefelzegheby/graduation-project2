@@ -22,6 +22,8 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
+  static const text18Labeld = TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.kPrimary);
   static const text14PrimaryColor = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.kPrimary);
   static const texthint11 = TextStyle(
@@ -36,5 +38,10 @@ abstract class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: Color(0xff8A8A8A),
+  );
+  static const text25 = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+    color: Color(0xffFFFFFF),
   );
 }

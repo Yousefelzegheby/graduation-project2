@@ -4,8 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
+import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/home_view/presentation/view/widgets/slider.dart';
+
+
 
 class MaterialItem extends StatelessWidget {
   const MaterialItem({super.key, this.onTap, this.text});
@@ -14,7 +17,9 @@ class MaterialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).push('/materialCourseView');
+      },
       child: Column(
         children: [
           Container(

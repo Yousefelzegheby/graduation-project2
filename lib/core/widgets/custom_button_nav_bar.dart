@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/colors.dart';
+import 'package:graduation/features/Bookmark/presentation/view/bookmark.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/suggest_view/presentation/view/suggest_view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
@@ -14,7 +15,12 @@ class CustomButonNavBar extends StatefulWidget {
 }
 
 class _CustomButonNavBarState extends State<CustomButonNavBar> {
-  List<Widget> pages = const [HomeView(), SuggestView(), Profile()];
+  List<Widget> pages = const [
+    HomeView(),
+    SuggestView(),
+    BookmarkView(),
+    Profile()
+  ];
   int current = 0;
 
   @override
@@ -45,6 +51,8 @@ class _CustomButonNavBarState extends State<CustomButonNavBar> {
                   label: "Home", icon: Icon(SolarIconsBold.home)),
               BottomNavigationBarItem(
                   label: "Suggest", icon: Icon(Symbols.checkbook_rounded)),
+              BottomNavigationBarItem(
+                  label: "Bookmark", icon: Icon(Symbols.bookmark)),
               BottomNavigationBarItem(
                   label: "Profile", icon: Icon(SolarIconsBold.user)),
             ],

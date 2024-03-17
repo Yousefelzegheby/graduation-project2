@@ -1,56 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/colors.dart';
 
-class MessageBody extends StatelessWidget {
-  const MessageBody({super.key});
+class MentorsBody extends StatelessWidget {
+  const MentorsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: ListView.separated(
-        separatorBuilder: (context, index) {
-          return const Divider(
-            indent: 30,
-            endIndent: 30,
-          );
-        },
-        itemCount: 50,
+      child: ListView.builder(
+        itemCount: 10,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
             child: Row(
               children: [
                 Image.asset(
-                  "assets/images/profile.png",
+                  "assets/images/Dr.ahmed3.png",
                   scale: 4,
                 ),
                 const SizedBox(width: 10),
                 const Column(
                   children: [
-                    Text("Mohamed Elkatan",
+                    Text("Dr. Ahmed",
                         style: TextStyle(
                           color: AppColors.kPrimary,
                           fontFamily: 'Poppins-Bold.ttf',
                           fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                         )),
-                    Text("mohamed elkatan",
+                    Text("Design Expert",
                         style: TextStyle(
-                          color: AppColors.kPrimary,
+                          color: AppColors.kGray,
                           fontFamily: 'Poppins-Regular.ttf',
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.w400,
                         )),
                   ],
                 ),
-                const SizedBox(width: 100),
-                const Text(
-                  "12:10 PM",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontFamily: 'Poppins-Regular.ttf',
+                IconButton(
+                  // alignment: Alignment.bottomRight,
+                  padding: const EdgeInsets.only(left: 160),
+                  onPressed: () {},
+                  icon: const ImageIcon(
+                    AssetImage("assets/images/chats.png"),
                     color: AppColors.kPrimary,
+                    size: 22,
                   ),
                 ),
               ],

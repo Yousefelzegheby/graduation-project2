@@ -1,5 +1,7 @@
 class AssetsPath {
   static const logo = 'assets/images/logo.png';
+  static const avatar = 'assets/images/gojo.png';
+  static const sendIcon = 'assets/images/send.png';
   static const person = 'assets/images/person.png';
   static const learning = 'assets/images/Learning-rafiki.png';
   static const learning2 = 'assets/images/Learning-cuate.png';
@@ -33,5 +35,4 @@ class AssetsPath {
   static const customNavBar = '/customnavbar';
   static const visitSubject = '/visitSubjects';
   static const lecTableView = '/lectableview';
-  static const materialView = '/materialview';
 }

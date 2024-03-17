@@ -10,11 +10,13 @@ class CustomSignUpItem extends StatelessWidget {
       required this.text,
       required this.hintText,
       this.prefix,
-      this.onchanged});
+      this.onchanged,
+      this.keyboardType});
   final String text;
   final String hintText;
   final IconData? prefix;
   final dynamic Function(String)? onchanged;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,6 +43,7 @@ class CustomSignUpItem extends StatelessWidget {
             hintText: hintText,
             sufex: prefix,
             onchanged: onchanged,
+            keyboardType: keyboardType,
           ),
         )
       ],

@@ -17,9 +17,10 @@ class SlidingAnimation extends StatelessWidget {
         builder: (context, _) {
           return SlideTransition(
             position: slidingAnimation,
-            child:  Text(
+            child: Text(
               'For Students',
-              style: Styles.textstyle20.copyWith(color:const Color(0xffEB882D)),
+              style:
+                  Styles.textstyle20.copyWith(color: const Color(0xffEB882D)),
               textAlign: TextAlign.center,
             ),
           );

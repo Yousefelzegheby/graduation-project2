@@ -18,8 +18,28 @@ class ApiServices {
 
       return data;
     } else {
-      throw Exception(
-          'there is an exception ${response.statusCode} ,whith body ${jsonDecode(response.body)}');
+      print("${response.statusCode},resbonsebody${response.body}");
+    }
+  }
+
+  Future<dynamic> postGrade({
+    dynamic faliuer,
+    @required required String url,
+    @required dynamic body,
+  }) async {
+    http.Response response = await http.post(
+      Uri.parse(url),
+      body: jsonEncode(body),
+    );
+    // print(response.statusCode);
+    if (response.statusCode == 200) {
+      dynamic data = jsonDecode(response.body);
+
+      return data;
+    } else {
+      // print("${response.statusCode},resbonsebody${faliuer = response.body}");
+      faliuer = response.body;
+      // print(faliuer);
     }
   }
 }

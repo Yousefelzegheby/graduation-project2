@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
@@ -47,22 +48,9 @@ class SignUp2Body extends StatelessWidget {
                   height: 16,
                 ),
                 const CustomSignUpItem(
-                  text: 'ID Number',
-                  hintText: 'id number',
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const CustomSignUpItem(
-                  text: 'Email',
-                  hintText: 'email',
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const CustomSignUpItem(
                   text: 'Phone Number',
                   hintText: 'phone number',
+                  keyboardType: TextInputType.number,
                 ),
                 const SizedBox(
                   height: 16,
@@ -82,8 +70,17 @@ class SignUp2Body extends StatelessWidget {
                 const SizedBox(
                   height: 24,
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .2,
+                ),
                 ButtonSignUp(
-                  text: 'Next',
+                  child: Text(
+                    'Next',
+                    style: Styles.text16.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.kLightColor,
+                    ),
+                  ),
                   onTap: () {
                     if (formkey.currentState!.validate()) {
                       GoRouter.of(context).push('/signup3');

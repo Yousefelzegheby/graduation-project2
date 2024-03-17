@@ -6,6 +6,7 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/massege&notification/presentation/views/message.dart';
 import 'package:graduation/features/massege&notification/presentation/views/notification.dart';
+
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({super.key});
 
@@ -20,42 +21,36 @@ class _CustomTabBarState extends State<CustomTabBar> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        
-        
-        appBar: AppBar(
-          
-          leading: IconButton(
-              onPressed: () {
-                GoRouter.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back_ios_new,color: AppColors.kPrimary,)),
-          title: Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width * .15),
-            child: Text("Notifications",
-                style: Styles.textstyle24.copyWith(color: AppColors.kPrimary)),
-          ),
-          bottom:const TabBar(       
-             
-            labelStyle: TextStyle(
-              fontFamily: 'Poppins-Bold.ttf',
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  GoRouter.of(context).pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios_new,
+                  color: AppColors.kPrimary,
+                )),
+            title: Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * .15),
+              child: Text("Notifications",
+                  style:
+                      Styles.textstyle24.copyWith(color: AppColors.kPrimary)),
             ),
-            tabs:[Tab(text: "Messages"), Tab(text: "Notifications")],
-            indicatorColor: AppColors.kPrimary,
-            labelColor: AppColors.kPrimary,
-            unselectedLabelColor: AppColors.kGray,
-            
+            bottom: const TabBar(
+              labelStyle: TextStyle(
+                fontFamily: 'Poppins-Bold.ttf',
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+              tabs: [Tab(text: "Messages"), Tab(text: "Notifications")],
+              indicatorColor: AppColors.kPrimary,
+              labelColor: AppColors.kPrimary,
+              unselectedLabelColor: AppColors.kGray,
+            ),
           ),
-        ),
-        body: const TabBarView(
-          children: [
-            MessageScreen(),
-            NotificationScreen()
-          ]
-        )
-      ),
+          body: const TabBarView(
+              children: [MessageScreen(), NotificationScreen()])),
     );
   }
 }

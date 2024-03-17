@@ -10,37 +10,36 @@ class SignUpView3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: AppColors.kPrimary,
-          ),
-        ),
-        title: Padding(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * .20,
-          ),
-          child: Text(
-            'Registration',
-            style: Styles.textstyle18.copyWith(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
               color: AppColors.kPrimary,
-              fontWeight: FontWeight.w600,
+            ),
+          ),
+          title: Padding(
+            padding: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width * .20,
+            ),
+            child: Text(
+              'Registration',
+              style: Styles.textstyle18.copyWith(
+                color: AppColors.kPrimary,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
-      ),
-      body: const Column(
-        children: [
-          Divider(
-            thickness: 1,
-          ),
-          SignUp3ViewBody(),
-        ],
-      ),
-    );
+        body: const Column(
+          children: [
+            Divider(
+              thickness: 1,
+            ),
+            SignUp3ViewBody(),
+          ],
+        ));
   }
 }

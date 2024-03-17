@@ -57,6 +57,5 @@ class Notificationbody extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }

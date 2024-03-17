@@ -92,7 +92,7 @@ class GetStarted3 extends StatelessWidget {
                     GestureDetector(
                       child: Image.asset(AssetsPath.buttonStart),
                       onTap: () {
-                        GoRouter.of(context).push('/GetStarted4');
+                        GoRouter.of(context).push(AssetsPath.getStarted4);
                       },
                     )
                   ],

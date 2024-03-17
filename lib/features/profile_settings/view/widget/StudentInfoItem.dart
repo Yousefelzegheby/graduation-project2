@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
-
 class StudentInfoItem extends StatelessWidget {
   const StudentInfoItem({
     super.key,

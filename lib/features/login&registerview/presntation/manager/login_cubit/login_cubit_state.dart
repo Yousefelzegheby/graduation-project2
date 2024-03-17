@@ -13,6 +13,6 @@ final class LogInCubitSucssess extends LoginCubitState {
 }
 
 final class LogInCubitFailuer extends LoginCubitState {
- final String? error;
+  final String? error;
   LogInCubitFailuer({this.error});
 }

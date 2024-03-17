@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
+import 'package:graduation/features/sign_up_view/presentation/manager/post_grade/post_grade_cubit.dart';
+import 'package:graduation/features/sign_up_view/presentation/manager/signup/sign_up_cubit.dart';
+import 'package:graduation/features/sign_up_view/presentation/manager/signup_year/sign_up_years_cubit.dart';
 
 void main() {
   runApp(const GraduationProgect());
@@ -13,8 +16,21 @@ class GraduationProgect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LogInCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LogInCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SignUpCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SignUpYearsCubit(),
+        ),
+        BlocProvider(
+          create: (context) => PostGradeCubit(),
+        )
+      ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

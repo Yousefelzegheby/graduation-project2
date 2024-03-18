@@ -36,9 +36,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 0;
                   });
                 },
-                color: Index == 0 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 0 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Python',
-                textColor: Index == 0 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 0 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 0 ? 80 : 80),
             custom_menu_bottom(
                 onTap: () {
@@ -46,9 +47,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 1;
                   });
                 },
-                color: Index == 1 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 1 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Java',
-                textColor: Index == 1 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 1 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 1 ? 70 : 70),
             custom_menu_bottom(
                 onTap: () {
@@ -56,9 +58,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 2;
                   });
                 },
-                color: Index == 2 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 2 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Excel',
-                textColor: Index == 2 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 2 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 2 ? 70 : 70),
             custom_menu_bottom(
                 onTap: () {
@@ -66,9 +69,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 3;
                   });
                 },
-                color: Index == 3 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 3 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Sql',
-                textColor: Index == 3 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 3 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 3 ? 60 : 60),
           ],
         ),
@@ -80,9 +84,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 4;
                   });
                 },
-                color: Index == 4 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 4 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'digital marketing',
-                textColor: Index == 4 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 4 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 4 ? 150 : 150),
             custom_menu_bottom(
                 onTap: () {
@@ -90,9 +95,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 5;
                   });
                 },
-                color: Index == 5 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 5 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'React',
-                textColor: Index == 5 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 5 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 5 ? 70 : 70),
             custom_menu_bottom(
                 onTap: () {
@@ -100,9 +106,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 6;
                   });
                 },
-                color: Index == 6 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 6 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Aws',
-                textColor: Index == 6 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 6 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 6 ? 70 : 70),
           ],
         ),
@@ -114,9 +121,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 7;
                   });
                 },
-                color: Index == 7 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 7 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'Photoshop',
-                textColor: Index == 7 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 7 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 7 ? 110 : 110),
             custom_menu_bottom(
                 onTap: () {
@@ -124,9 +132,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 8;
                   });
                 },
-                color: Index == 8 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 8 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'User Interface',
-                textColor: Index == 8 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 8 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 8 ? 140 : 140),
             custom_menu_bottom(
                 onTap: () {
@@ -134,9 +143,10 @@ class _CustomSearchBodyState extends State<CustomSearchBody> {
                     Index = 9;
                   });
                 },
-                color: Index == 9 ? AppColors.kPrimary : AppColors.kPrimary,
+                color: Index == 9 ? AppColors.kPrimary : AppColors.kLightblue,
                 text: 'C#',
-                textColor: Index == 9 ? AppColors.kPrimary : AppColors.kPrimary,
+                textColor:
+                    Index == 9 ? AppColors.kLightblue : AppColors.kPrimary,
                 width: Index == 9 ? 60 : 60),
           ],
         ),

@@ -36,7 +36,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       listener: (context, state) {
         // if (state is LogInCubitSucssess) {
         //   lood = false;
-        //   if (state.data['access_token'] != null) {
+        //   if (state.data[0].accessToken != null) {
         //     GoRouter.of(context).push('/customnavbar');
         //     controllerEmail.clear();
         //     controllerpass.clear();

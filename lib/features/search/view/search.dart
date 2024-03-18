@@ -48,7 +48,6 @@ class _SearchviewState extends State<Searchview> {
                   Expanded(
                     child: Container(
                       height: 44,
-                      
                       child: TextFormField(
                         controller: searchcontroller,
                         keyboardType: TextInputType.text,
@@ -83,7 +82,7 @@ class _SearchviewState extends State<Searchview> {
             padding: EdgeInsets.only(left: 16, right: 16),
             child: Column(
               children: [
-                custom_search_body(),
+                CustomSearchBody(),
                 SizedBox(
                   height: 10,
                 ),

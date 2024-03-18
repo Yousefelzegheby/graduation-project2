@@ -44,4 +44,3 @@ class SubjectView extends StatelessWidget {
     );
   }
 }
-

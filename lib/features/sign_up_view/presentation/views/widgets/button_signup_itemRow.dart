@@ -3,8 +3,9 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
 class ButtonSignUpItemRow extends StatelessWidget {
-  const ButtonSignUpItemRow({super.key, required this.text});
-  final String text;
+  const ButtonSignUpItemRow({super.key, required this.child});
+
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,13 +14,7 @@ class ButtonSignUpItemRow extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * .33,
         ),
-        Text(
-          text,
-          style: Styles.textstyle16.copyWith(
-            color: AppColors.kLightColor,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        child,
         SizedBox(
           width: MediaQuery.of(context).size.width * .3,
         ),

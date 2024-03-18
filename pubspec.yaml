@@ -39,6 +39,7 @@ dependencies:
   iconify_flutter: ^0.0.5
   material_symbols_icons: ^4.2719.1
   modal_progress_hud_nsn: ^0.4.0
+  restart_app: ^1.2.1
   solar_icons: ^0.0.5
 
 dev_dependencies:

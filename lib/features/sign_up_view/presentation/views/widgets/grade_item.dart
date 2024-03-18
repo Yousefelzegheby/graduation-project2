@@ -7,7 +7,11 @@ import 'package:graduation/core/widgets/custom_text_form_feild.dart';
 class GradItem extends StatelessWidget {
   const GradItem({
     super.key,
+    required this.text,
+    this.onchanged,
   });
+  final dynamic Function(String)? onchanged;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +22,7 @@ class GradItem extends StatelessWidget {
           SizedBox(
             width: 200,
             child: Text(
-              'Wep Programming',
+              text,
               style: Styles.text14.copyWith(
                   fontSize: 12,
                   color: AppColors.kPrimary,
@@ -27,10 +31,12 @@ class GradItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const SizedBox(
+          SizedBox(
               width: 114,
               height: 31,
               child: CustomTextFormFeild(
+                keyboardType: TextInputType.number,
+                onchanged: onchanged,
                 color: AppColors.kGray,
               ))
         ],

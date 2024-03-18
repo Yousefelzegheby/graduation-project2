@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/widgets/custom_button_nav_bar.dart';
 import 'package:graduation/features/EditeProfile/presntation/view/edite-profile.dart';
 import 'package:graduation/features/chat/presentaion/chat_view.dart';
@@ -34,15 +35,15 @@ abstract class AppRoutes {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: '/GetStarted',
+        path: AssetsPath.getStarted,
         builder: (context, state) => const GetStarted(),
       ),
       GoRoute(
-        path: '/GetStarted2',
+        path: AssetsPath.getStarted2,
         builder: (context, state) => const GetStarted2(),
       ),
       GoRoute(
-        path: '/GetStarted3',
+        path: AssetsPath.getStarted3,
         builder: (context, state) => const GetStarted3(),
       ),
       GoRoute(
@@ -66,7 +67,7 @@ abstract class AppRoutes {
         builder: (context, state) => const DepartmentView(),
       ),
       GoRoute(
-        path: '/GetStarted4',
+        path: AssetsPath.getStarted4,
         builder: (context, state) => const GetStarted4(),
       ),
       GoRoute(

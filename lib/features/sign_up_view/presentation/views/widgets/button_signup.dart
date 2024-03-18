@@ -3,9 +3,10 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/widgets/button_signup_itemRow.dart';
 
 class ButtonSignUp extends StatelessWidget {
-  const ButtonSignUp({super.key, this.onTap, required this.text});
+  const ButtonSignUp({super.key, this.onTap, required this.child});
   final void Function()? onTap;
-  final String text;
+
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +22,7 @@ class ButtonSignUp extends StatelessWidget {
           ),
         ),
         child: ButtonSignUpItemRow(
-          text: text,
+          child: child,
         ),
       ),
     );

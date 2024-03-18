@@ -14,5 +14,5 @@ final class ForgetCubitSuccess extends ForgetCubitState {
 
 final class ForgetCubitfailuer extends ForgetCubitState {
   final String error;
-  ForgetCubitfailuer({ required this.error});
+  ForgetCubitfailuer({required this.error});
 }

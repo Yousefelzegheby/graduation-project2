@@ -26,7 +26,7 @@ class AsDoctorOrStudent extends StatelessWidget {
                   fontsize: 16,
                   theText: 'As a Student',
                   onpressed: () {
-                     GoRouter.of(context).push('/LoginViwe');
+                    GoRouter.of(context).push('/LoginViwe');
                   },
                   backgroundColor: AppColors.kPrimary),
               const SizedBox(

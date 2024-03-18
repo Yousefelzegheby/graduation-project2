@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/features/sign_up_view/presentation/views/widgets/list_view_degree.dart';
+import 'package:graduation/features/sign_up_view/presentation/views/widgets/list_view_firist_degree.dart';
 
 class FiristYearGrade extends StatefulWidget {
-  const FiristYearGrade({super.key, this.height});
+  const FiristYearGrade({
+    super.key,
+    this.height,
+    this.onchanged,
+  });
   final double? height;
+
+  final dynamic Function(String)? onchanged;
   @override
   State<FiristYearGrade> createState() => _FiristYearGradeState();
 }
@@ -60,7 +66,7 @@ class _FiristYearGradeState extends State<FiristYearGrade> {
                   ),
                 ),
               ),
-              const ListViewDegreeYear()
+              ListViewFiristDegreeYear(),
             ],
           )),
     );

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/Bookmark/presentation/view/bookmark.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
-import 'package:graduation/features/suggest_view/presentation/view/notification_view.dart';
+import 'package:graduation/features/suggest_view/presentation/view/suggest_view.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/majesticons.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:solar_icons/solar_icons.dart';
 

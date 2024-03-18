@@ -14,13 +14,13 @@ import 'package:graduation/features/login&registerview/presntation/view/forget_v
 import 'package:graduation/features/login&registerview/presntation/view/login-view.dart';
 import 'package:graduation/features/massege&notification/presentation/views/massege_notification.dart';
 import 'package:graduation/features/profile_settings/view/profile.dart';
+import 'package:graduation/features/search/view/search.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/enterg_grade_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up2_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/signup_view3.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
 import 'package:graduation/features/subject_view/presntaion/courses_view.dart';
-
 
 import '../../features/material_view/presentaion/material_course_view.dart';
 import '../../features/material_view/presentaion/material_view.dart';
@@ -125,7 +125,18 @@ abstract class AppRoutes {
         path: '/materilcourselectures',
         builder: (context, state) => const MaterilCoureseLecturesView(),
       ),
-
+      GoRoute(
+        path: '/searchview',
+        builder: (context, state) => const Searchview(),
+      ),
+      // GoRoute(
+      //   path: '/massegeNotification',
+      //   builder: (context, state) => const MassegeNotification(),
+      // ),
+      // GoRoute(
+      //   path: '/coursesview',
+      //   builder: (context, state) => const CoursesView(),
+      // ),
     ],
   );
 }

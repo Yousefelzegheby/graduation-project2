@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/colors.dart';
 
-
 class CustomCategoriesList extends StatefulWidget {
   const CustomCategoriesList({Key? key}) : super(key: key);
 

@@ -12,37 +12,39 @@ class AsDoctorOrStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 128, left: 24, right: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(AssetsPath.logo),
-              const SizedBox(
-                height: 54,
-              ),
-              CustomButton(
-                  textColor: AppColors.kLightColor,
-                  fontsize: 16,
-                  theText: 'As a Student',
-                  onpressed: () {
-                    GoRouter.of(context).push('/LoginViwe');
-                  },
-                  backgroundColor: AppColors.kPrimary),
-              const SizedBox(
-                height: 32,
-              ),
-              CustomButton(
-                  textColor: AppColors.kLightColor,
-                  fontsize: 16,
-                  theText: 'As a Doctor',
-                  onpressed: () {},
-                  backgroundColor: AppColors.kPrimary),
-              const SizedBox(
-                height: 32,
-              ),
-              const TextLoginIntro()
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 128, left: 24, right: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(AssetsPath.logo),
+                const SizedBox(
+                  height: 54,
+                ),
+                CustomButton(
+                    textColor: AppColors.kLightColor,
+                    fontsize: 16,
+                    theText: 'As a Student',
+                    onpressed: () {
+                      GoRouter.of(context).push('/LoginViwe');
+                    },
+                    backgroundColor: AppColors.kPrimary),
+                const SizedBox(
+                  height: 32,
+                ),
+                CustomButton(
+                    textColor: AppColors.kLightColor,
+                    fontsize: 16,
+                    theText: 'As a Doctor',
+                    onpressed: () {},
+                    backgroundColor: AppColors.kPrimary),
+                const SizedBox(
+                  height: 32,
+                ),
+                const TextLoginIntro()
+              ],
+            ),
           ),
         ),
       ),

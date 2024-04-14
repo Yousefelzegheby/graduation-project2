@@ -4,16 +4,20 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/features/home_view/presentation/view/widgets/slider.dart';
-
-
 
 class MaterialItem extends StatelessWidget {
-  const MaterialItem({super.key, this.onTap, this.text});
+  const MaterialItem(
+      {super.key,
+      this.onTap,
+      required this.image,
+      required this.ciourseName,
+      required this.progress});
   final void Function()? onTap;
-  final String? text;
+
+  final String image;
+  final String ciourseName;
+  final String progress;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -33,22 +37,33 @@ class MaterialItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset('assets/images/image course.png'),
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(6),
+                    topRight: Radius.circular(6),
+                  ),
+                  child: Image.network(
+                    '${AssetsPath.apiLink}$image',
+                    scale: .5,
+                  ),
+                ),
                 const SizedBox(
                   height: 7,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Text(
-                    'computer science,',
+                    ciourseName,
                     style: Styles.textstyle16.copyWith(
                       color: AppColors.kPrimary,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 7),
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 9),
                   child: Text(
                     'course',
                     style: Styles.text14.copyWith(
@@ -58,7 +73,7 @@ class MaterialItem extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 5, bottom: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -66,10 +81,12 @@ class MaterialItem extends StatelessWidget {
                           height: 16,
                           width: 16,
                           child: Image.asset(AssetsPath.clock)),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 8,
+                        ),
                         child: Text(
-                          "20 Houres",
+                          "$progress Houres",
                           style: Styles.text14PrimaryColor,
                         ),
                       )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/routers.dart';
+import 'package:graduation/features/home_view/presentation/manager/cubit/home_view_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/post_grade/post_grade_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup/sign_up_cubit.dart';
@@ -29,7 +30,8 @@ class GraduationProgect extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PostGradeCubit(),
-        )
+        ),
+        BlocProvider(create: (context) => HomeViewCubit())
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

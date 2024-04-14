@@ -9,6 +9,7 @@ import 'package:graduation/core/widgets/custom_button.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/custom_textfeild_passward.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/text_login_intro.dart';
+import 'package:graduation/features/sign_up_view/data/signup_model/signup_model/signup_model.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup/sign_up_cubit.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -90,6 +91,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * .42,
                             child: CustomTextFormFeild(
+                              controller: firistName,
                               color: AppColors.kGray,
                               hintText: 'firist name',
                               label: const Text('firist name'),
@@ -104,6 +106,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * .43,
                             child: CustomTextFormFeild(
+                              controller: lastName,
                               color: AppColors.kGray,
                               hintText: 'last name',
                               label: const Text('last name'),
@@ -149,6 +152,8 @@ class _SignUpBodyState extends State<SignUpBody> {
                                   last: last!,
                                   email: email!,
                                   password: password!);
+                              print(email);
+                              print(password);
                             }
                           },
                           backgroundColor: AppColors.kPrimary),

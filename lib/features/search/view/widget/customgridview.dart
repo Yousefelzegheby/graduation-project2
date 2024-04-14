@@ -26,6 +26,5 @@ class _customGridViewState extends State<customGridView> {
         itemBuilder: (context, index) => const coursesitemwidget(),
       ),
     );
-    
   }
 }

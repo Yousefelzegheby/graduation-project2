@@ -4,7 +4,6 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
-
 class MaterialCourseView extends StatelessWidget {
   const MaterialCourseView({super.key});
 
@@ -33,7 +32,6 @@ class MaterialCourseView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 209,
               color: AppColors.kPrimary,
               child: Padding(
                 padding:

@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:graduation/core/utiles/api_services.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/features/sign_up_view/data/signup_mode.dart';
+import 'package:graduation/features/sign_up_view/data/signup_model/signup_model/signup_model.dart';
 
 part 'sign_up_state.dart';
 

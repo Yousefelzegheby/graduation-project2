@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/colors.dart';
+import 'package:graduation/core/utiles/path.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
 class RecomendedCourseItem extends StatelessWidget {
-  const RecomendedCourseItem({super.key});
-
+  const RecomendedCourseItem(
+      {super.key,
+      required this.image,
+      required this.ciourseName,
+      required this.progress});
+  final String image;
+  final String ciourseName;
+  final String progress;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,20 +24,26 @@ class RecomendedCourseItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('assets/images/image course.png'),
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(6),
+                  topRight: Radius.circular(6),
+                ),
+                child: Image.network('${AssetsPath.apiLink}$image'),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 6, right: 6, top: 7),
                 child: Text(
-                  'computer science,',
+                  ciourseName,
                   style: Styles.textstyle16.copyWith(
                     color: AppColors.kPrimary,
                   ),
-                  maxLines: 2,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 7),
                 child: Text(
                   'course',
                   style: Styles.text14.copyWith(
@@ -40,15 +53,15 @@ class RecomendedCourseItem extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(left: 6, right: 6, bottom: 8, top: 8),
+                padding: const EdgeInsets.only(
+                    left: 6, right: 6, bottom: 10, top: 8),
                 child: Row(
                   children: [
                     Image.asset('assets/images/clock_4725362 1.png'),
                     const SizedBox(
                       width: 2.5,
                     ),
-                    Text('20hours',
+                    Text('$progress hours',
                         style: Styles.text14.copyWith(
                             color: AppColors.kPrimary,
                             fontWeight: FontWeight.w400,

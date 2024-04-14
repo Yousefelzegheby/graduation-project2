@@ -22,6 +22,7 @@ import 'package:graduation/features/sign_up_view/presentation/views/sign_up_view
 import 'package:graduation/features/sign_up_view/presentation/views/signup_view3.dart';
 import 'package:graduation/features/splash_view/presntation/splash_view.dart';
 import 'package:graduation/features/subject_view/presntaion/courses_view.dart';
+import 'package:graduation/features/suggest_view/presentation/view/suggest_view.dart';
 
 import '../../features/material_view/presentaion/material_course_view.dart';
 import '../../features/material_view/presentaion/material_view.dart';
@@ -116,7 +117,7 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: '/chatview',
-        builder: (context, state) => const ChatView(),
+        builder: (context, state) => const ChatBoot(),
       ),
       GoRoute(
         path: '/materialCourseView',
@@ -129,6 +130,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/searchview',
         builder: (context, state) => const Searchview(),
+      ),
+      GoRoute(
+        path: '/suggestView',
+        builder: (context, state) => const SuggestView(),
       ),
       // GoRoute(
       //   path: '/massegeNotification',

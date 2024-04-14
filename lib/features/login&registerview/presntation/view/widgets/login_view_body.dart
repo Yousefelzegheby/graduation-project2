@@ -9,6 +9,7 @@ import 'package:graduation/core/utiles/snakeBar.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/core/widgets/custom_button.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
+import 'package:graduation/features/home_view/presentation/manager/cubit/home_view_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/custom_textfeild_passward.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/text_login_intro.dart';
@@ -34,21 +35,21 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<LogInCubit, LoginCubitState>(
       listener: (context, state) {
-        // if (state is LogInCubitSucssess) {
-        //   lood = false;
-        //   if (state.data[0].accessToken != null) {
-        //     GoRouter.of(context).push('/customnavbar');
-        //     controllerEmail.clear();
-        //     controllerpass.clear();
-        //   } else {
-        //     showSnakbar(context, 'wrong password or e-mail');
-        //   }
-        // } else if (state is LogInCubitFailuer) {
-        //   lood = false;
-        //   showSnakbar(context, 'wrong from server');
-        // } else if (state is LogInCubitLooding) {
-        //   lood = true;
-        // }
+        if (state is LogInCubitSucssess) {
+          lood = false;
+          if (state.data[0].accessToken != null) {
+            GoRouter.of(context).push('/customnavbar');
+            controllerEmail.clear();
+            controllerpass.clear();
+          } else {
+            showSnakbar(context, 'wrong password or e-mail');
+          }
+        } else if (state is LogInCubitFailuer) {
+          lood = false;
+          showSnakbar(context, 'wrong from server');
+        } else if (state is LogInCubitLooding) {
+          lood = true;
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
@@ -104,13 +105,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           theText: 'Log In',
                           onpressed: () async {
                             if (formkey.currentState!.validate()) {
-                              GoRouter.of(context).push('/customnavbar');
+                              // GoRouter.of(context).push('/customnavbar');
 
-                              // BlocProvider.of<LogInCubit>(context)
-                              //     .postPasswardAndEmail(
-                              //   email: email!,
-                              //   password: password!,
-                              // );
+                              BlocProvider.of<LogInCubit>(context)
+                                  .postPasswardAndEmail(
+                                email: email!,
+                                password: password!,
+                              );
                             }
                           },
                           backgroundColor: AppColors.kPrimary),

@@ -31,15 +31,13 @@ class ApiServices {
       Uri.parse(url),
       body: jsonEncode(body),
     );
-    // print(response.statusCode);
+    print(response.statusCode);
     if (response.statusCode == 200) {
       dynamic data = jsonDecode(response.body);
 
       return data;
     } else {
-      // print("${response.statusCode},resbonsebody${faliuer = response.body}");
-      faliuer = response.body;
-      // print(faliuer);
+      print("${response.statusCode},resbonsebody${faliuer = response.body}");
     }
   }
 }

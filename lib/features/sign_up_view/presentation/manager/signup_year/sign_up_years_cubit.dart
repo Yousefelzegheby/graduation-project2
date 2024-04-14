@@ -22,7 +22,7 @@ class SignUpYearsCubit extends Cubit<SignUpYearsState> {
       // for (int i = 0; i < data.length; i++) {
       //   enterGrade.add(EnterGradeModel.fromJson(data[i]));
       // }
-
+      print(enterGrade);
       emit(SignUpYearSuccess(success: enterGrade));
     } catch (e) {
       emit(const SignUpYearfailuer(failuer: 'error from server'));

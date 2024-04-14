@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:graduation/core/utiles/api_services.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/features/login&registerview/data/login_model.dart';
+import 'package:graduation/features/login&registerview/data/login_model/login_model.dart';
 
 part 'login_cubit_state.dart';
 

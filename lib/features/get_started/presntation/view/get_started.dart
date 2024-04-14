@@ -23,7 +23,7 @@ class GetStarted extends StatelessWidget {
                   children: [
                     TextButton(
                       onPressed: () {
-                        GoRouter.of(context).push('/LoginViwe');
+                        GoRouter.of(context).push('/asDoctorOrStudent');
                       },
                       child: const Text(
                         'Skip',

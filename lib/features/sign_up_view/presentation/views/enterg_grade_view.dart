@@ -9,7 +9,6 @@ import 'package:graduation/features/sign_up_view/presentation/manager/signup/sig
 import 'package:graduation/features/sign_up_view/presentation/manager/signup_year/sign_up_years_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/widgets/button_signup.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/widgets/enter_grade_body.dart';
-import 'package:restart_app/restart_app.dart';
 
 class EnterGrade extends StatefulWidget {
   const EnterGrade({super.key});
@@ -22,21 +21,26 @@ class _EnterGradeState extends State<EnterGrade> {
   bool thelood = false;
   Widget? child;
   dynamic data;
-  String? id;
+
   @override
   Widget build(BuildContext context) {
+    String id;
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
-        if (state is SignUpSuccess) {
-          id = state.data[0]['id'].toString();
-        }
+        id = BlocProvider.of<SignUpCubit>(context)
+            .data[0]['user_data']['id']
+            .toString();
       },
       builder: (context, state) {
-        if (state is SignUpSuccess) {
-          id = state.data[0]['id'].toString();
-        }
+        id = BlocProvider.of<SignUpCubit>(context)
+            .data[0]['user_data']['id']
+            .toString();
+
         return BlocConsumer<PostGradeCubit, PostGradeState>(
           listener: (context, state) {
+            id = BlocProvider.of<SignUpCubit>(context)
+                .data[0]['user_data']['id']
+                .toString();
             if (state is PostGradeSuccess) {
               if (state.data == null) {
                 showSnakbar(context, 'please,enter your grade success');
@@ -45,9 +49,8 @@ class _EnterGradeState extends State<EnterGrade> {
                 GoRouter.of(context).pop();
                 GoRouter.of(context).pop();
                 GoRouter.of(context).pop();
-                //  GoRouter.of(context).go('/LoginViwe');
+
                 showSnakbar(context, 'Login whith your email now');
-                // Restart.restartApp();
               }
             } else if (state is PostGradeLooding) {
             } else if (state is PostGradefailuer) {
@@ -55,6 +58,9 @@ class _EnterGradeState extends State<EnterGrade> {
             }
           },
           builder: (context, state) {
+            id = BlocProvider.of<SignUpCubit>(context)
+                .data[0]['user_data']['id']
+                .toString();
             data = BlocProvider.of<SignUpYearsCubit>(context).enterGrade;
             if (state is PostGradeLooding) {
               child = const SizedBox(

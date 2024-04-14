@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/snakeBar.dart';
 import 'package:graduation/core/utiles/styles.dart';
-import 'package:graduation/features/sign_up_view/data/signup_mode.dart';
+import 'package:graduation/features/sign_up_view/data/signup_model/signup_model/signup_model.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup/sign_up_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup_year/sign_up_years_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/views/widgets/button_signup.dart';
@@ -19,26 +19,31 @@ class SignUp3ViewBody extends StatefulWidget {
 }
 
 String? year;
-int? id;
+
 final GlobalKey<FormState> formKey = GlobalKey();
 
 class _SignUp3ViewBodyState extends State<SignUp3ViewBody> {
   @override
   Widget build(BuildContext context) {
     Widget? child;
-
+    String? id;
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
-        if (state is SignUpSuccess) {
-          id = state.data[0]['id'];
-        }
+        id = BlocProvider.of<SignUpCubit>(context)
+            .data[0]['user_data']['id']
+            .toString();
+        if (state is SignUpSuccess) {}
       },
       builder: (context, state) {
-        if (state is SignUpSuccess) {
-          id = state.data[0]['id'];
-        }
+        id = BlocProvider.of<SignUpCubit>(context)
+            .data[0]['user_data']['id']
+            .toString();
+        if (state is SignUpSuccess) {}
         return BlocConsumer<SignUpYearsCubit, SignUpYearsState>(
           listener: (context, state) {
+            id = BlocProvider.of<SignUpCubit>(context)
+                .data[0]['user_data']['id']
+                .toString();
             if (state is SignUpYearSuccess) {
               if (int.parse(year!) == 1) {
                 GoRouter.of(context).pop();
@@ -54,6 +59,9 @@ class _SignUp3ViewBodyState extends State<SignUp3ViewBody> {
             }
           },
           builder: (context, state) {
+            id = BlocProvider.of<SignUpCubit>(context)
+                .data[0]['user_data']['id']
+                .toString();
             if (state is SignUpYearLooding) {
               child = const SizedBox(
                 width: 25,
@@ -129,7 +137,10 @@ class _SignUp3ViewBodyState extends State<SignUp3ViewBody> {
                               BlocProvider.of<SignUpYearsCubit>(context)
                                   .signUpYear(
                                 grade: year!,
-                                id: id.toString(),
+                                id: id!,
+                              );
+                              print(
+                                id,
                               );
                             }
                           },

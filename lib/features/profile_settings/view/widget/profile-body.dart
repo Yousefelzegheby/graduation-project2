@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/styles.dart';
+import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 import 'package:graduation/features/profile_settings/view/widget/Section1Settings.dart';
 import 'package:graduation/features/profile_settings/view/widget/Section2Settings.dart';
 import 'package:graduation/features/profile_settings/view/widget/setting_list_view.dart';
@@ -39,6 +41,8 @@ class ProfileBodey extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     GoRouter.of(context).pop();
+                    BlocProvider.of<LogInCubit>(context).allproduct.clear();
+                    print(BlocProvider.of<LogInCubit>(context).allproduct);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

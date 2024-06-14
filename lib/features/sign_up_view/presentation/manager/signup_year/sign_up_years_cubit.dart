@@ -2,8 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:graduation/core/utiles/api_services.dart';
 import 'package:graduation/core/utiles/path.dart';
-import 'package:graduation/features/sign_up_view/data/enter_grade_model/enter_grade_model.dart';
-import 'package:graduation/features/sign_up_view/presentation/views/widgets/enter_grade_body.dart';
 
 part 'sign_up_years_state.dart';
 

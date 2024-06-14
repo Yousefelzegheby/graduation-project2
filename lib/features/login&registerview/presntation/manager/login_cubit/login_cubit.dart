@@ -24,7 +24,8 @@ class LogInCubit extends Cubit<LoginCubitState> {
 
       emit(LogInCubitSucssess(data: allproduct));
     } catch (e) {
-      emit(LogInCubitFailuer(error: 'there is an error please try again'));
+      emit(LogInCubitFailuer(error: e.toString()));
+      print(e.toString());
     }
   }
 }

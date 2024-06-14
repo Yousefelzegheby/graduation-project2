@@ -20,9 +20,6 @@ class ForgetPasswardViewBody extends StatefulWidget {
 
 class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
   final GlobalKey<FormState> key = GlobalKey();
-  final TextEditingController codeController = TextEditingController();
-  final TextEditingController idController = TextEditingController();
-  final TextEditingController univesityController = TextEditingController();
   String? sCode;
   String? email;
   String? id;
@@ -37,11 +34,11 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
             islooded = true;
           } else if (state is ForgetCubitSuccess) {
             islooded = false;
-            if (state.data == true) {
-              GoRouter.of(context).push('/LoginViwe');
-              showSnakbar(context, 'New PASSWORD is your ID');
+            if (state.data == 1) {
+              GoRouter.of(context).pop();
+              showSnakbar(context, 'your password send to your email');
             } else {
-              showSnakbar(context, 'wrong s_code or e-mail or ID_N');
+              showSnakbar(context, 'wrong email');
             }
           } else if (state is ForgetCubitfailuer) {
             islooded = false;
@@ -63,19 +60,10 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                         const SizedBox(
                           height: 48,
                         ),
-                        CustomTextFormFeild(
-                            controller: codeController,
-                            onchanged: (data) {
-                              sCode = data;
-                            },
-                            label: const Text('Student code(Required)'),
-                            color: AppColors.kGray,
-                            hintText: 'Student code(Required)'),
                         const SizedBox(
                           height: 16,
                         ),
                         CustomTextFormFeild(
-                            controller: idController,
                             onchanged: (data) {
                               id = data;
                             },
@@ -87,7 +75,6 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                           height: 16,
                         ),
                         CustomTextFormFeild(
-                            controller: univesityController,
                             onchanged: (data) {
                               email = data;
                             },
@@ -114,13 +101,7 @@ class _ForgetPasswardViewBodyState extends State<ForgetPasswardViewBody> {
                             onpressed: () {
                               if (key.currentState!.validate()) {
                                 BlocProvider.of<ForgetCubit>(context)
-                                    .forgetPassword(
-                                        studintCode: sCode!,
-                                        id: id!,
-                                        email: email!);
-                                codeController.clear();
-                                idController.clear();
-                                univesityController.clear();
+                                    .forgetPassword(email: email!);
                               }
                             },
                             backgroundColor: AppColors.kPrimary),

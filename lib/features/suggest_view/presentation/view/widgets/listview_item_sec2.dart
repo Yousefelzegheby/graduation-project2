@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
 class ListViewItemSec2 extends StatelessWidget {
-  const ListViewItemSec2({super.key});
-
+  const ListViewItemSec2(
+      {super.key, required this.numberStudent, required this.numbreHour});
+  final String numberStudent;
+  final String numbreHour;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,7 +15,7 @@ class ListViewItemSec2 extends StatelessWidget {
           width: 2.5,
         ),
         Text(
-          '20 Hours',
+          '$numbreHour Hours',
           style:
               Styles.text14PrimaryColor.copyWith(fontWeight: FontWeight.w400),
         ),
@@ -25,7 +27,7 @@ class ListViewItemSec2 extends StatelessWidget {
           width: 2.5,
         ),
         Text(
-          '200',
+          numberStudent,
           style:
               Styles.text14PrimaryColor.copyWith(fontWeight: FontWeight.w400),
         ),

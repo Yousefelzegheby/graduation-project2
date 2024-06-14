@@ -10,7 +10,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
 
   // List<SignupModel> signUpinfo = [];
-  dynamic data;
+  List<dynamic> data = [];
   Future<void> signUpNew(
       {required String email,
       required String password,
@@ -33,6 +33,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       emit(SignUpSuccess(data: data));
     } catch (e) {
       emit(SignUpFailuer(error: 'there is an error please try again'));
+      print(e.toString());
     }
   }
 }

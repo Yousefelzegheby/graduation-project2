@@ -11,6 +11,10 @@ final class ChatInitial extends ChatState {}
 
 final class ChatLoodingState extends ChatState {}
 
-final class ChatSuccessState extends ChatState {}
+final class ChatSuccessState extends ChatState {
+  final dynamic data;
+
+  const ChatSuccessState({required this.data});
+}
 
 final class ChatFailuerState extends ChatState {}

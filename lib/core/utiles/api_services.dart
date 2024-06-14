@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,7 +19,7 @@ class ApiServices {
 
       return data;
     } else {
-      print("${response.statusCode},resbonsebody${response.body}");
+      return response;
     }
   }
 

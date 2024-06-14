@@ -66,7 +66,7 @@ class _FiristYearGradeState extends State<FiristYearGrade> {
                   ),
                 ),
               ),
-              ListViewFiristDegreeYear(),
+              const ListViewFiristDegreeYear(),
             ],
           )),
     );

@@ -67,6 +67,7 @@ class GetStarted extends StatelessWidget {
                       child: Image.asset(AssetsPath.buttonStart),
                       onTap: () {
                         GoRouter.of(context).push(AssetsPath.getStarted2);
+                        // GoRouter.of(context).push('/suggestView');
                       },
                     )
                   ],

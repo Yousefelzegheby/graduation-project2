@@ -37,13 +37,16 @@ class _SignUpBodyState extends State<SignUpBody> {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          if (state.data[0]['access_token'] != null) {
+          if (state.data[0]['access_token'] != null && state.data != null) {
             looding = false;
             controllerEmail.clear();
             controllerpass.clear();
             firistName.clear();
             lastName.clear();
             GoRouter.of(context).push('/signup2');
+          } else if (state.data == null) {
+            showSnakbar(context, 'email already register');
+            looding = false;
           }
         } else if (state is SignUpLooding) {
           looding = true;
@@ -152,8 +155,6 @@ class _SignUpBodyState extends State<SignUpBody> {
                                   last: last!,
                                   email: email!,
                                   password: password!);
-                              print(email);
-                              print(password);
                             }
                           },
                           backgroundColor: AppColors.kPrimary),

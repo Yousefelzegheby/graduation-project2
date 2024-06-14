@@ -46,7 +46,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           }
         } else if (state is LogInCubitFailuer) {
           lood = false;
-          showSnakbar(context, 'wrong from server');
+          showSnakbar(context, 'wrong email or password');
         } else if (state is LogInCubitLooding) {
           lood = true;
         }

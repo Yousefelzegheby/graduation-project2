@@ -78,7 +78,7 @@ class GetStarted4 extends StatelessWidget {
                     GestureDetector(
                       child: Image.asset(AssetsPath.buttonStart),
                       onTap: () {
-                        GoRouter.of(context).push('/LoginViwe');
+                        GoRouter.of(context).push('/asDoctorOrStudent');
                       },
                     )
                   ],

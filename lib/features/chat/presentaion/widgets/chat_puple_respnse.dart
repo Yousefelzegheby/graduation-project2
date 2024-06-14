@@ -3,10 +3,11 @@ import 'package:graduation/core/utiles/colors.dart';
 
 class ChatPupleResponse extends StatelessWidget {
   const ChatPupleResponse({
-    required this.message,
+    this.message,
     Key? key,
   }) : super(key: key);
-  final String message;
+  final String? message;
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -15,13 +16,15 @@ class ChatPupleResponse extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: const BoxDecoration(
-            color: AppColors.kPrimary,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-                bottomLeft: Radius.circular(20))),
+          color: AppColors.kPrimary,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+            bottomLeft: Radius.circular(20),
+          ),
+        ),
         child: Text(
-          message,
+          message ?? '',
           style: const TextStyle(
             color: AppColors.kLightColor,
           ),

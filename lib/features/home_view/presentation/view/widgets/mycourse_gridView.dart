@@ -34,10 +34,8 @@ class MycourseGridView extends StatelessWidget {
             itemBuilder: (context, index) => CourseItem(
               image: homeInfo![0].userCourses![index].courseImage ??
                   'assets/images/gojo.png',
-              ciourseName:
-                  homeInfo![0].userCourses![index].courseName ?? "don't name",
-              progress:
-                  homeInfo![0].userCourses![index].progress.toString() ?? '1',
+              ciourseName: homeInfo![0].userCourses![index].courseName!,
+              progress: homeInfo![0].userCourses![index].progress.toString(),
             ),
           ),
         );

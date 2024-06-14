@@ -5,18 +5,18 @@ import 'package:graduation/core/utiles/path.dart';
 
 part 'chat_state.dart';
 
-dynamic data;
-
 class ChatCubit extends Cubit<ChatState> {
   ChatCubit() : super(ChatInitial());
-  Future<void> postHomeInfo({required String token}) async {
+  dynamic data;
+  Future<void> chatGet({dynamic body}) async {
     emit(ChatLoodingState());
     try {
       data = await ApiServices().post(
-          url: "${AssetsPath.apiLink}/api/auth/user_data",
-          body: {'token': token});
+        body: body,
+        url: "${AssetsPath.apiLink}/api/chatbot",
+      );
 
-      emit(ChatSuccessState());
+      emit(ChatSuccessState(data: data));
       // for (int i = 0; i < data.length; i++) {
       //   homeInfo.add(HomeInformation.fromJson(data[i]));
       // }

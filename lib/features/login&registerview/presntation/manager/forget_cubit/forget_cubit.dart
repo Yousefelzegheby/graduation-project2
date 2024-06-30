@@ -13,7 +13,7 @@ class ForgetCubit extends Cubit<ForgetCubitState> {
     emit(ForgetCubitLooding());
     try {
       dynamic data = await ApiServices().post(
-          url: '${AssetsPath.apiLink}/api/reset_password',
+          url: '${AssetsPath.apiLink}/api/auth/reset_password',
           body: {'Email': email});
       emit(ForgetCubitSuccess(data: data));
       print(data);

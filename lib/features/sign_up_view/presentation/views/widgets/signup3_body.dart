@@ -27,14 +27,21 @@ class _SignUp3ViewBodyState extends State<SignUp3ViewBody> {
   Widget build(BuildContext context) {
     Widget? child;
     String? id;
+    String? token;
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         id = BlocProvider.of<SignUpCubit>(context)
             .data[0]['user_data']['id']
             .toString();
+        token = BlocProvider.of<SignUpCubit>(context)
+            .data[0]["access_token"]
+            .toString();
         if (state is SignUpSuccess) {}
       },
       builder: (context, state) {
+        token = BlocProvider.of<SignUpCubit>(context)
+            .data[0]["access_token"]
+            .toString();
         id = BlocProvider.of<SignUpCubit>(context)
             .data[0]['user_data']['id']
             .toString();
@@ -136,12 +143,8 @@ class _SignUp3ViewBodyState extends State<SignUp3ViewBody> {
                             if (formKey.currentState!.validate()) {
                               BlocProvider.of<SignUpYearsCubit>(context)
                                   .signUpYear(
-                                grade: year!,
-                                id: id!,
-                              );
-                              print(
-                                id,
-                              );
+                                      grade: year!, id: id!, token: token!);
+                              print(token);
                             }
                           },
                         )

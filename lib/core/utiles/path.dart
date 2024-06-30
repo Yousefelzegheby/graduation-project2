@@ -15,7 +15,7 @@ class AssetsPath {
   static const itemLecTables = 'assets/images/pdf.png';
   static const itemLecTablesColumn = 'assets/images/column.png';
   static const clock = 'assets/images/clock_4725362 1.png';
-  static const apiLink = 'https://fb88-197-48-222-36.ngrok-free.app';
+  static const apiLink = 'https://4b8b-102-187-101-91.ngrok-free.app';
   static const getStarted = '/GetStarted';
   static const getStarted2 = '/GetStarted2';
   static const getStarted3 = '/GetStarted3';

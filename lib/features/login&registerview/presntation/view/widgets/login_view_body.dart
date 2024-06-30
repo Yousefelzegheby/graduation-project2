@@ -9,7 +9,7 @@ import 'package:graduation/core/utiles/snakeBar.dart';
 import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/core/widgets/custom_button.dart';
 import 'package:graduation/core/widgets/custom_text_form_feild.dart';
-import 'package:graduation/features/home_view/presentation/manager/cubit/home_view_cubit.dart';
+import 'package:graduation/features/home_view/presentation/manager/home/home_view_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/custom_textfeild_passward.dart';
 import 'package:graduation/features/login&registerview/presntation/view/widgets/text_login_intro.dart';

@@ -4,6 +4,7 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/Bookmark/presentation/view/bookmark.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
+import 'package:graduation/features/suggest_view/presentation/manager/cubit/recomended_course_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/manual/manual_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/suggest/suggest_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/view/suggest_view.dart';
@@ -51,9 +52,12 @@ class _CustomButonNavBarState extends State<CustomButonNavBar> {
                 onTap: (val) {
                   setState(() {
                     current = val;
+                    print(val);
                     if (val == 1) {
                       BlocProvider.of<SuggestCubit>(context)
                           .suggestFirist(token: token!);
+                      BlocProvider.of<RecomendedCourseCubit>(context)
+                          .recommendedfunction(token: token!);
                     } else {
                       BlocProvider.of<ManualCubit>(context).course.clear();
                     }

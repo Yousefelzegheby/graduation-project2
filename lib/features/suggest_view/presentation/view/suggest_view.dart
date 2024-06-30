@@ -39,15 +39,18 @@ class SuggestView extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
-            tabs: [Tab(text: "Manual Suggest"), Tab(text: "Auto Suggest")],
+            tabs: [
+              Tab(text: "Recommended Courses"),
+              Tab(text: "Manual Suggest")
+            ],
             indicatorColor: AppColors.kPrimary,
             labelColor: AppColors.kPrimary,
             unselectedLabelColor: AppColors.kGray,
           ),
         ),
         body: const TabBarView(children: [
-          SuggestManualViewBody(),
           AutoSuggestBody(),
+          SuggestManualViewBody(),
         ]),
       ),
     );

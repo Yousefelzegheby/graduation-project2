@@ -4,11 +4,13 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/features/EditeProfile/presntation/manager/edit_profile/edit_profile_cubit.dart';
 import 'package:graduation/features/chat/manager/get/chat_cubit.dart';
-import 'package:graduation/features/home_view/presentation/manager/cubit/home_view_cubit.dart';
+import 'package:graduation/features/home_view/presentation/manager/home/home_view_cubit.dart';
+import 'package:graduation/features/lec_table_view/presentaions/manager/cubit/material_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/post_grade/post_grade_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup/sign_up_cubit.dart';
 import 'package:graduation/features/sign_up_view/presentation/manager/signup_year/sign_up_years_cubit.dart';
+import 'package:graduation/features/suggest_view/presentation/manager/cubit/recomended_course_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/manual/manual_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/suggest/suggest_cubit.dart';
 
@@ -50,6 +52,12 @@ class GraduationProgect extends StatelessWidget {
         BlocProvider(
           create: (context) => EditProfileCubit(),
         ),
+        BlocProvider(
+          create: (context) => RecomendedCourseCubit(),
+        ),
+        BlocProvider(
+          create: (context) => MaterialCubit(),
+        )
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

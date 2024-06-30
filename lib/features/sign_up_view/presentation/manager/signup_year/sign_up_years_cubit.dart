@@ -9,13 +9,16 @@ class SignUpYearsCubit extends Cubit<SignUpYearsState> {
   SignUpYearsCubit() : super(SignUpYearsInitial());
 
   List<dynamic> enterGrade = [];
-  Future<void> signUpYear({required String grade, required String id}) async {
+  Future<void> signUpYear(
+      {required String grade,
+      required String id,
+      required String token}) async {
     emit(SignUpYearLooding());
 
     try {
       enterGrade = await ApiServices().post(
           url: "${AssetsPath.apiLink}/api/StdCourses",
-          body: {"academic_year": grade, 'id': id});
+          body: {"academic_year": grade, 'id': id, "token": token});
 
       // for (int i = 0; i < data.length; i++) {
       //   enterGrade.add(EnterGradeModel.fromJson(data[i]));

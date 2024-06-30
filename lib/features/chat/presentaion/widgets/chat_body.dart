@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/features/chat/manager/get/chat_cubit.dart';
 import 'package:graduation/features/chat/presentaion/widgets/chat_puple.dart';
-import 'package:graduation/features/chat/presentaion/widgets/chat_puple_respnse.dart';
 
 class ChatBody extends StatelessWidget {
   const ChatBody({super.key});
@@ -20,14 +19,16 @@ class ChatBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        if (state is ChatSuccessState) {
+        if (state is ChatLoodingState) {
+          return const Center(child: Text('Wait..'));
+        } else if (state is ChatSuccessState) {
           data = state.data;
 
           return Expanded(
             child: ListView.separated(
               itemBuilder: (context, index) {
                 return ChatPuple(
-                  text: data![0]['data'][index]['msg'],
+                  text: data![0]['data'][index]['msg'] ?? 'thank you',
                   bottomLeft: data![0]['data'][index]['Sender'] == 1 ? 20 : 0,
                   bottomRight: data![0]['data'][index]['Sender'] == 1 ? 0 : 20,
                   alignment: data![0]['data'][index]['Sender'] == 1

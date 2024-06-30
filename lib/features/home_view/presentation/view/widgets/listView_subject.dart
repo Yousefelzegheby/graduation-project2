@@ -23,25 +23,6 @@ class ListViewSubject extends StatelessWidget {
             image: 'assets/images/book_4644023.png',
           ),
           ListViewItemSubject(
-            text: 'Lecture tables',
-            onTap: () {
-              GoRouter.of(context).push('/lectableview');
-            },
-            image: 'assets/images/calendar_747479.png',
-          ),
-          ListViewItemSubject(
-            text: 'Academic Resuls',
-            onTap: () {},
-            image: 'assets/images/checklist_3385148.png',
-          ),
-          ListViewItemSubject(
-            text: 'Materials',
-            onTap: () {
-              GoRouter.of(context).push("/materialview");
-            },
-            image: 'assets/images/layer_7157590.png',
-          ),
-          ListViewItemSubject(
             text: 'Support&Help',
             onTap: () {
               BlocProvider.of<ChatCubit>(context).chatGet();

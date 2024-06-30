@@ -21,7 +21,7 @@ class _EnterGradeState extends State<EnterGrade> {
   bool thelood = false;
   Widget? child;
   dynamic data;
-
+  String? token;
   @override
   Widget build(BuildContext context) {
     String id;
@@ -30,11 +30,15 @@ class _EnterGradeState extends State<EnterGrade> {
         id = BlocProvider.of<SignUpCubit>(context)
             .data[0]['user_data']['id']
             .toString();
+        token =
+            BlocProvider.of<SignUpCubit>(context).data[0]['user_data']['token'];
       },
       builder: (context, state) {
         id = BlocProvider.of<SignUpCubit>(context)
             .data[0]['user_data']['id']
             .toString();
+        token =
+            BlocProvider.of<SignUpCubit>(context).data[0]['user_data']['token'];
 
         return BlocConsumer<PostGradeCubit, PostGradeState>(
           listener: (context, state) {

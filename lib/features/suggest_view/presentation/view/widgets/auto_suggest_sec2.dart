@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:graduation/core/utiles/styles.dart';
 
 class AutoSuggestSec2 extends StatelessWidget {
-  const AutoSuggestSec2({super.key});
-
+  const AutoSuggestSec2(
+      {super.key, required this.hours, required this.numbreStudent});
+  final String hours;
+  final String numbreStudent;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,7 +15,7 @@ class AutoSuggestSec2 extends StatelessWidget {
           width: 2.5,
         ),
         Text(
-          '20 Hours',
+          '$hours Hours',
           style:
               Styles.text14PrimaryColor.copyWith(fontWeight: FontWeight.w400),
         ),
@@ -25,7 +27,7 @@ class AutoSuggestSec2 extends StatelessWidget {
           width: 2.5,
         ),
         Text(
-          '200',
+          numbreStudent,
           style:
               Styles.text14PrimaryColor.copyWith(fontWeight: FontWeight.w400),
         ),

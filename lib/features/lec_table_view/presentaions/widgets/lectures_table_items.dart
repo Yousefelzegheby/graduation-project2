@@ -10,15 +10,15 @@ class LecturestableItemWidget extends StatelessWidget {
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Padding(
-        padding: const EdgeInsets.only(top: 24, left: 24),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+    return Padding(
+      padding: const EdgeInsets.only(top: 24, left: 24),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          InkWell(
+            onTap: onTap,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
@@ -104,12 +104,12 @@ class LecturestableItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            IconButton(
-                padding: const EdgeInsets.only(bottom: 12),
-                onPressed: () {},
-                icon: Image.asset(AssetsPath.itemLecTablesColumn))
-          ],
-        ),
+          ),
+          IconButton(
+              padding: const EdgeInsets.only(bottom: 12),
+              onPressed: () {},
+              icon: Image.asset(AssetsPath.itemLecTablesColumn))
+        ],
       ),
     );
   }

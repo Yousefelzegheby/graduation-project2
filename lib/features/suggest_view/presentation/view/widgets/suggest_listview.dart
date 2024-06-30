@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation/core/utiles/snakeBar.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/manual/manual_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/manager/suggest/suggest_cubit.dart';
 import 'package:graduation/features/suggest_view/presentation/view/widgets/Listview_item.dart';
@@ -23,6 +24,11 @@ class _SuggestListviewState extends State<SuggestListview> {
         data = BlocProvider.of<SuggestCubit>(context).data;
       },
       builder: (context, state) {
+        if (state is SuggestLodding) {
+          return const CircularProgressIndicator();
+        } else if (state is SuggestFailuer) {
+          showSnakbar(context, 'there is an error, please try again');
+        }
         data = BlocProvider.of<SuggestCubit>(context).data;
         return ListView.separated(
             shrinkWrap: true,
@@ -31,32 +37,33 @@ class _SuggestListviewState extends State<SuggestListview> {
                   onPressed: () {
                     if (BlocProvider.of<ManualCubit>(context)
                         .course
-                        .contains(data[index]['CourseName'])) {
+                        .contains(data[0]['data'][index]['CourseName'])) {
                       BlocProvider.of<ManualCubit>(context)
                           .course
-                          .remove(data[index]['CourseName']);
+                          .remove(data[0]['data'][index]['CourseName']);
                       print(BlocProvider.of<ManualCubit>(context).course);
                     } else {
                       BlocProvider.of<ManualCubit>(context)
                           .course
-                          .add(data[index]['CourseName']);
+                          .add(data[0]['data'][index]['CourseName']);
 
                       setState(() {
-                        data.removeAt(index);
+                        data[0]['data'].removeAt(index);
                       });
                       print(BlocProvider.of<ManualCubit>(context).course);
                     }
                   },
                   width: width,
-                  drName: data[index]['Doctor_name'],
-                  courseName: data[index]['CourseName'],
-                  numbreHour: data[index]['Credit_hours'].toString(),
-                  numberStudent: data[index]['Number_of_students'].toString(),
-                  image: data[index]['Course-image'],
+                  drName: data[0]['data'][index]['Doctor_name'].toString(),
+                  courseName: data[0]['data'][index]['CourseName'],
+                  numbreHour: data[0]['data'][index]['Credit_hours'].toString(),
+                  numberStudent:
+                      data[0]['data'][index]['Number_of_students'].toString(),
+                  image: data[0]['data'][index]['Course-image'],
                   index: index,
                 ),
             separatorBuilder: (context, index) => const SizedBox(),
-            itemCount: data.length);
+            itemCount: data[0]['data'].length);
       },
     );
   }

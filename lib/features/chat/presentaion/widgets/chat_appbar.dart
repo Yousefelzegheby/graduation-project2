@@ -50,30 +50,32 @@ class ChatAppbar extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * .2),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(555),
-                          child: SizedBox(
-                            height: 50,
-                            child: Image.network(
-                              '${AssetsPath.apiLink}$image',
-                              fit: BoxFit.cover,
+                    child: SizedBox(
+                      width: 100,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(555),
+                            child: SizedBox(
+                              height: 50,
+                              child: Image.network(
+                                '${AssetsPath.apiLink}$image',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        SizedBox(
-                          width: 100,
-                          child: Text(
+                          const SizedBox(height: 10),
+                          Text(
                             name,
                             style: Styles.textstyle16
                                 .copyWith(color: AppColors.kPrimary),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],

@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/core/utiles/colors.dart';
+import 'package:graduation/core/utiles/styles.dart';
 import 'package:graduation/features/suggest_view/presentation/view/widgets/auto_suggest_sec1.dart';
 
 class AutoSuggestItem extends StatelessWidget {
-  const AutoSuggestItem({super.key});
-
+  const AutoSuggestItem(
+      {super.key,
+      required this.hours,
+      required this.numbreStudent,
+      required this.courseName,
+      required this.drName,
+      this.gpa});
+  final String hours;
+  final String numbreStudent;
+  final String courseName;
+  final String drName;
+  final String? gpa;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 16),
       child: Container(
-        height: 112,
+        height: 120,
         padding: const EdgeInsets.all(16),
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
@@ -26,30 +38,15 @@ class AutoSuggestItem extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            const AutoSuggestSec1(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .13,
+            AutoSuggestSec1(
+              courseName: courseName,
+              drName: drName,
+              hours: hours,
+              numbreStudent: numbreStudent,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: 36,
-                height: 36,
-                decoration: BoxDecoration(
-                    color: AppColors.kPrimary,
-                    borderRadius: BorderRadius.circular(555)),
-                child: const Center(
-                  child: Icon(
-                    Icons.add,
-                    color: AppColors.kLightColor,
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),
     );
-    ;
   }
 }

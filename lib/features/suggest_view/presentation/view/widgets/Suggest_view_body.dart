@@ -55,18 +55,7 @@ class SuggestManualViewBody extends StatelessWidget {
                                   .allproduct[0]
                                   .accessToken!);
                         },
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      ButtonSuggest(
-                        textColor: AppColors.kDarkColor,
-                        textButton: 'Edit',
-                        backColor: AppColors.kLightColor,
-                        onTap: () {
-                          GoRouter.of(context).push('/editsugest');
-                        },
-                      ),
+                      )
                     ],
                   ),
                   const SizedBox(

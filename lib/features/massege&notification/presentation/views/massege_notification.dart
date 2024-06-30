@@ -37,20 +37,8 @@ class _CustomTabBarState extends State<CustomTabBar> {
                   style:
                       Styles.textstyle24.copyWith(color: AppColors.kPrimary)),
             ),
-            bottom: const TabBar(
-              labelStyle: TextStyle(
-                fontFamily: 'Poppins-Bold.ttf',
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-              tabs: [Tab(text: "Messages"), Tab(text: "Notifications")],
-              indicatorColor: AppColors.kPrimary,
-              labelColor: AppColors.kPrimary,
-              unselectedLabelColor: AppColors.kGray,
-            ),
           ),
-          body: const TabBarView(
-              children: [MessageScreen(), NotificationScreen()])),
+          body: const NotificationScreen()),
     );
   }
 }

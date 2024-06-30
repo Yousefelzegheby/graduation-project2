@@ -12,11 +12,13 @@ class CourseItem extends StatelessWidget {
       this.onTap,
       required this.image,
       required this.ciourseName,
-      required this.progress});
+      required this.progress,
+      required this.value1});
   final void Function()? onTap;
   final String image;
   final String ciourseName;
   final String progress;
+  final double value1;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -79,7 +81,9 @@ class CourseItem extends StatelessWidget {
                         fontSize: 12),
                   ),
                 ),
-                const Slide()
+                Slide(
+                  value1: value1,
+                )
               ],
             ),
           ),

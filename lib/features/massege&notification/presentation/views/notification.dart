@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/features/massege&notification/presentation/views/widget/no%20notifications.dart';
 import 'package:graduation/features/massege&notification/presentation/views/widget/notifications.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -8,7 +7,12 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Notificationbody(),
+      body: Column(
+        children: [
+          Divider(),
+          Expanded(child: Notificationbody()),
+        ],
+      ),
     );
   }
 }

@@ -9,14 +9,18 @@ class CourseViewItem extends StatelessWidget {
       {super.key,
       required this.image,
       required this.ciourseName,
-      required this.progress});
+      required this.progress,
+      required this.value1,
+      this.onTap});
   final String image;
   final String ciourseName;
   final String progress;
+  final double value1;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Column(children: [
         Container(
           width: MediaQuery.of(context).size.width * .4,
@@ -73,7 +77,9 @@ class CourseViewItem extends StatelessWidget {
                       fontSize: 12),
                 ),
               ),
-              const Slide(),
+              Slide(
+                value1: value1,
+              ),
               const SizedBox(
                 height: 10,
               )

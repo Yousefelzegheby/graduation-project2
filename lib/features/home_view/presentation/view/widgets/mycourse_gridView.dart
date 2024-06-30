@@ -34,6 +34,7 @@ class MycourseGridView extends StatelessWidget {
               crossAxisCount: 2,
             ),
             itemBuilder: (context, index) => CourseItem(
+              value1: homeInfo![0].userCourses![index].progress!.toDouble(),
               onTap: () {
                 BlocProvider.of<MaterialCubit>(context).materialFunction(
                     courseName: homeInfo![0].userCourses![index].courseName!);

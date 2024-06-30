@@ -57,53 +57,80 @@ class _LecTableViewState extends State<LecTableView> {
             ),
           );
         } else if (state is MaterialSuccess) {
-          return Scaffold(
-            appBar: AppBar(
-                leading: IconButton(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  onPressed: () {
-                    GoRouter.of(context).pop();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    size: 24,
-                    color: AppColors.kPrimary,
+          if (material == null) {
+            return Scaffold(
+              appBar: AppBar(
+                  leading: IconButton(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    onPressed: () {
+                      GoRouter.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 24,
+                      color: AppColors.kPrimary,
+                    ),
                   ),
-                ),
-                title: SizedBox(
-                    height: 67,
-                    child: Image.asset(
-                      AssetsPath.logo,
-                      fit: BoxFit.cover,
-                    )),
-                centerTitle: true,
-                toolbarHeight: 88),
-            body: Column(
-              children: [
-                const Divider(),
-                const TitlePageLec(
-                  titlel: "Material :",
-                ),
-                Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) => LecturestableItemWidget(
-                        onTap: () async {
-                          String url =
-                              'https://4b8b-102-187-101-91.ngrok-free.app/Material/pdf/CS131_lec1.pdf';
-                          final Uri uri = Uri.parse(url);
-                          try {
-                            await launchUrl(uri);
-                          } catch (e) {
-                            print(e.toString());
-                          }
-                        },
-                        title: material[0].data![index].materialName!),
-                    itemCount: material[0].data!.length,
+                  title: SizedBox(
+                      height: 67,
+                      child: Image.asset(
+                        AssetsPath.logo,
+                        fit: BoxFit.cover,
+                      )),
+                  centerTitle: true,
+                  toolbarHeight: 88),
+              body: const Column(
+                children: [Divider(), Text('this subject has no material')],
+              ),
+            );
+          } else {
+            return Scaffold(
+              appBar: AppBar(
+                  leading: IconButton(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    onPressed: () {
+                      GoRouter.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 24,
+                      color: AppColors.kPrimary,
+                    ),
                   ),
-                )
-              ],
-            ),
-          );
+                  title: SizedBox(
+                      height: 67,
+                      child: Image.asset(
+                        AssetsPath.logo,
+                        fit: BoxFit.cover,
+                      )),
+                  centerTitle: true,
+                  toolbarHeight: 88),
+              body: Column(
+                children: [
+                  const Divider(),
+                  const TitlePageLec(
+                    titlel: "Material :",
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemBuilder: (context, index) => LecturestableItemWidget(
+                          onTap: () async {
+                            String url = material[0].data![index].materialLink!;
+                            final Uri uri = Uri.parse(url);
+                            try {
+                              await launchUrl(uri);
+                            } catch (e) {
+                              print(e.toString());
+                            }
+                          },
+                          title: material[0].data![index].materialName!),
+                      itemCount: material[0].data!.length,
+                    ),
+                  )
+                ],
+              ),
+            );
+          }
         } else {
           return Scaffold(
             appBar: AppBar(
@@ -127,7 +154,7 @@ class _LecTableViewState extends State<LecTableView> {
                 centerTitle: true,
                 toolbarHeight: 88),
             body: const Column(
-              children: [Divider(), Text('this subject not has material')],
+              children: [Divider(), Text('this subject has no material')],
             ),
           );
         }

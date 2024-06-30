@@ -8,9 +8,9 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * .15,
-      width: MediaQuery.of(context).size.width * .9,
-      padding: const EdgeInsets.all(8),
+      height: MediaQuery.of(context).size.height * .2,
+      width: MediaQuery.of(context).size.width * .7,
+      padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -31,7 +31,7 @@ class CustomContainer extends StatelessWidget {
               customtext(
                 text: 'Introduction to UI&UX',
                 fontfamily: 'Poppins-Bold.ttf',
-                size: 16,
+                size: 12,
                 fontWeight: FontWeight.w500,
               ),
               SizedBox(
@@ -50,7 +50,7 @@ class CustomContainer extends StatelessWidget {
                   customtext(
                     text: 'Michael Worthington ',
                     fontfamily: 'Poppins-regular.ttf',
-                    size: 14,
+                    size: 12,
                     fontWeight: FontWeight.w400,
                   ),
                 ],

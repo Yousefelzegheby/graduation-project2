@@ -14,7 +14,7 @@ class CustomTextFeildPassward extends StatefulWidget {
 }
 
 class _CustomTextFeildPasswardState extends State<CustomTextFeildPassward> {
-  bool obscured = false;
+  bool obscured = true;
 
   @override
   void initState() {

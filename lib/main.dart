@@ -4,6 +4,7 @@ import 'package:graduation/core/utiles/colors.dart';
 import 'package:graduation/core/utiles/routers.dart';
 import 'package:graduation/features/EditeProfile/presntation/manager/edit_profile/edit_profile_cubit.dart';
 import 'package:graduation/features/chat/manager/get/chat_cubit.dart';
+import 'package:graduation/features/gpa_page/presentation/msnsger/cubit/gpa_cubit.dart';
 import 'package:graduation/features/home_view/presentation/manager/home/home_view_cubit.dart';
 import 'package:graduation/features/lec_table_view/presentaions/manager/cubit/material_cubit.dart';
 import 'package:graduation/features/login&registerview/presntation/manager/login_cubit/login_cubit.dart';
@@ -57,6 +58,9 @@ class GraduationProgect extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => MaterialCubit(),
+        ),
+         BlocProvider(
+          create: (context) => GpaCubit(),
         )
       ],
       child: MaterialApp.router(

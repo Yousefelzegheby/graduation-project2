@@ -8,6 +8,7 @@ import 'package:graduation/features/get_started/presntation/view/Get_started4.da
 import 'package:graduation/features/get_started/presntation/view/get_started.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started2.dart';
 import 'package:graduation/features/get_started/presntation/view/get_started3.dart';
+import 'package:graduation/features/gpa_page/presentation/gpa_page.dart';
 import 'package:graduation/features/home_view/presentation/view/home_view.dart';
 import 'package:graduation/features/lec_table_view/presentaions/lec_table_view.dart';
 import 'package:graduation/features/login&registerview/presntation/view/as_doctor_or_student.dart';
@@ -140,6 +141,10 @@ abstract class AppRoutes {
       GoRoute(
         path: '/editsugest',
         builder: (context, state) => const EditView(),
+      ),
+      GoRoute(
+        path: '/gpa',
+        builder: (context, state) => const GpaPage(),
       ),
     ],
   );

@@ -10,17 +10,17 @@ class TextLoginIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       children: [
+
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "By creating an account,you accept academix's",
-                style: Styles.text14,
-              ),
-            ],
+
+          child:const Text(
+            "By creating an account,you accept academix's",
+            style: Styles.text14,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ),
         SizedBox(

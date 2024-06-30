@@ -79,10 +79,8 @@ class Customitem extends StatelessWidget {
                     ],
                   ),
                 ]),
-            const SizedBox(
-              width: 5,
-            ),
-            custom_bookmark(),
+
+            // custom_bookmark(),
           ]),
         ),
       ),

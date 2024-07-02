@@ -18,6 +18,9 @@ class ApiServices {
       dynamic data = jsonDecode(response.body);
 
       return data;
+    } else if (response.statusCode == 222) {
+      dynamic data = jsonDecode(response.body);
+      return data;
     } else {
       return response;
     }

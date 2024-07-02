@@ -24,7 +24,7 @@ class _GpaBodyState extends State<GpaBody> {
         data = BlocProvider.of<GpaCubit>(context).data;
         if (state is GpaLooding) {
           return const Center(
-            child:  Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

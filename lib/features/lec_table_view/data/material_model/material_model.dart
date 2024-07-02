@@ -1,22 +1,29 @@
 import 'package:equatable/equatable.dart';
 
-import 'datum.dart';
+import 'course_information.dart';
+import 'materiel.dart';
 
 class MaterialModel extends Equatable {
-	final List<Datum>? data;
+  final CourseInformation? courseInformation;
+  final List<Materiel>? materiel;
 
-	const MaterialModel({this.data});
+  const MaterialModel({this.courseInformation, this.materiel});
 
-	factory MaterialModel.fromJson(Map<String, dynamic> json) => MaterialModel(
-				data: (json['data'] as List<dynamic>?)
-						?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
-						.toList(),
-			);
+  factory MaterialModel.fromJson(Map<String, dynamic> json) => MaterialModel(
+        courseInformation: json['CourseInformation'] == null
+            ? null
+            : CourseInformation.fromJson(
+                json['CourseInformation'] as Map<String, dynamic>),
+        materiel: (json['Materiel'] as List<dynamic>?)
+            ?.map((e) => Materiel.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
-	Map<String, dynamic> toJson() => {
-				'data': data?.map((e) => e.toJson()).toList(),
-			};
+  Map<String, dynamic> toJson() => {
+        'CourseInformation': courseInformation?.toJson(),
+        'Materiel': materiel?.map((e) => e.toJson()).toList(),
+      };
 
-	@override
-	List<Object?> get props => [data];
+  @override
+  List<Object?> get props => [courseInformation, materiel];
 }

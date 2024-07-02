@@ -8,6 +8,9 @@ sealed class GpaState extends Equatable {
 }
 
 final class GpaInitial extends GpaState {}
+
 final class GpaLooding extends GpaState {}
+
 final class GpaSuccess extends GpaState {}
+
 final class GpaFailuer extends GpaState {}

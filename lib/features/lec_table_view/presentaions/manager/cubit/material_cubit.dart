@@ -9,12 +9,13 @@ part 'material_state.dart';
 class MaterialCubit extends Cubit<MaterialCubitState> {
   MaterialCubit() : super(MaterialInitial());
   List<MaterialModel> material = [];
+  List<dynamic> data = [];
   Future<void> materialFunction({
     String? courseName,
   }) async {
     emit(MaterialLooding());
     try {
-      dynamic data = await ApiServices().post(
+      data = await ApiServices().post(
           url: "${AssetsPath.apiLink}/api/Material",
           body: {'courseName': courseName});
 
@@ -22,7 +23,7 @@ class MaterialCubit extends Cubit<MaterialCubitState> {
       for (int i = 0; i < data.length; i++) {
         material.add(MaterialModel.fromJson(data[i]));
       }
-      print(material);
+      print(data);
     } catch (e) {
       emit(MaterialFailuer());
     }

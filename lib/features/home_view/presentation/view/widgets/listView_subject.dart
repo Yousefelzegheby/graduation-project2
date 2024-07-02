@@ -26,7 +26,7 @@ class _ListViewSubjectState extends State<ListViewSubject> {
         homeInfo = BlocProvider.of<LogInCubit>(context).allproduct;
       },
       builder: (context, state) {
-                homeInfo = BlocProvider.of<LogInCubit>(context).allproduct;
+        homeInfo = BlocProvider.of<LogInCubit>(context).allproduct;
 
         return SizedBox(
           height: MediaQuery.of(context).size.height * .2,
@@ -43,7 +43,8 @@ class _ListViewSubjectState extends State<ListViewSubject> {
               ListViewItemSubject(
                 text: '  GPA',
                 onTap: () {
-                  BlocProvider.of<GpaCubit>(context).gpa(token: homeInfo[0].accessToken!);
+                  BlocProvider.of<GpaCubit>(context)
+                      .gpa(token: homeInfo[0].accessToken!);
                   GoRouter.of(context).push('/gpa');
                 },
                 image: 'assets/images/chat_8156135.png',

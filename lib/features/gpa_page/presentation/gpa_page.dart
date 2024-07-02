@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation/core/utiles/colors.dart';
@@ -10,7 +9,7 @@ class GpaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
           leading: IconButton(
             padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -29,7 +28,7 @@ class GpaPage extends StatelessWidget {
           ),
           centerTitle: true,
           toolbarHeight: 88),
-      body:const GpaBody(),
+      body: const GpaBody(),
     );
   }
 }

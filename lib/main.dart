@@ -59,7 +59,7 @@ class GraduationProgect extends StatelessWidget {
         BlocProvider(
           create: (context) => MaterialCubit(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => GpaCubit(),
         )
       ],
